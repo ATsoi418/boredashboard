@@ -1,0 +1,82 @@
+// Vars
+
+$black: #010000;
+$lightGrey: #e6e6e6;
+$darkGrey: #333;
+$navyBlue: #282c34;
+$red: #ff1755;
+
+$easeInOut: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$turnDuration: 0.6s;
+
+// Mixins
+
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+    -moz-transform: translateY($e);
+    transform: translateY($e);
+}
+
+@mixin transition($e) {
+    -webkit-transition:$e;
+    -moz-transition:$e;
+    transition:$e;
+}
+
+@mixin fa-spin($e) {
+    -webkit-animation: fa-spin ($e) infinite linear;
+    -moz-animation: fa-spin ($e) infinite linear;
+    -o-animation: fa-spin ($e) infinite linear;
+    animation: fa-spin ($e) infinite linear;
+}
+
+@mixin animate($name, $easing, $duration: 300ms, $delay: 0s, $iteration: 1, $direction: normal, $fill-mode: forwards) {
+    animation: $name $duration $easing $delay $iteration $direction $fill-mode;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    color: $black;
+}
+
+nav,
+nav ul,
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    ul li {
+        list-style-type: none;
+    }
+}
+
+
+a {
+    @include transition(.4s ease-in-out);
+    cursor: pointer;
+    text-decoration: none !important;
+
+    &:hover {
+        color: mediumaquamarine;
+        text-decoration: none !important;
+        @include transition(.4s ease-in-out);
+        
+    }
+}
+
+.container-fluid {
+    line-height: 24px;
+}
+
+.content {
+    margin-top: 50px;
+    margin-left: 250px;
+    align-items: stretch;
+}
+
+.fa-spin-hover:hover {
+    @include fa-spin(5s);
+}
