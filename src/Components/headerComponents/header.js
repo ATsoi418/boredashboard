@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch,faEye,faCog,faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
+import BinClock from './binClock.js';
+// import DateClock from './dateClock.js';
+
+
 class Header extends Component {
   render() {
     return (
@@ -10,15 +14,16 @@ class Header extends Component {
         <div className="logo">
           <Link to="/">BOREDASHBOARD</Link>
         </div>
-        {/* <div className="dt"> */}
-          {/* var options = { weekday: 'short', year: 'numeric', month: 'long', day: '2-digit' }; */}
-          {/* var today  = new Date(); */}
-          {/* {Date()} */}
-        {/* </div> */}
+        <div id="binClock">
+          <BinClock />
+        </div>
+        {/* <div id="dateClock">
+          <DateClock />
+        </div> */}
         <nav>
           <ul>
             <li>
-              <FontAwesomeIcon icon={faSearch}/>
+              <FontAwesomeIcon icon={faSearch} className="moveLeft-hover"/>
             </li>
             <li>|</li>
             <li>

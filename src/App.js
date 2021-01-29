@@ -28,7 +28,7 @@ class App extends Component {
               <Route exact path='/projmon' component={ProjMon} />
               {/* <Route exact path='/others' component={Others} /> */}
             </div>
-            {/* <Footer /> */}
+          {/* <Footer /> */}
         </div>
       </Router>
     );

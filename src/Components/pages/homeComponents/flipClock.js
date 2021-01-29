@@ -53,7 +53,7 @@ const FlipUnitContainer = ({ digit, shuffle, unit }) => {
     const animation2 = !shuffle ? 'fold' : 'unfold';
 
     return(
-        <div className='flipUnitContainer'>
+        <div className="flipUnitContainer">
         <StaticCard 
             position='upperCard' 
             digit={currentDigit} 
@@ -146,7 +146,7 @@ class FlipClock extends Component {
         } = this.state;
         
         return(
-            <div className='flipClock'>
+            <div className="flipClock">
                 <FlipUnitContainer 
                     digit={hours} 
                     shuffle={hoursShuffle} 

@@ -6,7 +6,7 @@ class Homepage extends Component {
   render() {
     return (
       <div className="container-fluid">
-          <div id="clockApp">
+          <div id="flipClock">
             <FlipClock />
           </div>
       </div>
