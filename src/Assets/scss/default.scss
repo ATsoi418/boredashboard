@@ -105,7 +105,12 @@ header {
                 line-height: normal;
                 color: white;
 
-                svg {
+                .navIcon {
+                    width: 30px;
+                    display: inline-block;
+                }
+
+                .navIcon svg {
                     margin-right: 5px;
                 }
             }
@@ -131,7 +136,7 @@ header {
         justify-content: space-between;
         width: 3 * 140px + 30px;
     }
-    
+
     .flipUnitContainer {
         display: block;
         position: relative;
