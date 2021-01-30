@@ -11,7 +11,7 @@ class DateClock extends Component {
   componentDidMount() {
     setInterval(function() {
       var today = new Date(),
-      dateStr =  (Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(today)) + ', ' + (Intl.DateTimeFormat('en-US', { month: 'short'}).format(today)) + ' ' + today.getDate() + ', ' + today.getFullYear();
+      dateStr =  (Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(today)) + ', ' + (Intl.DateTimeFormat('en-US', { month: 'long'}).format(today)) + ' ' + today.getDate() + ', ' + today.getFullYear();
 
       this.setState({
         dateNow: dateStr
@@ -27,4 +27,5 @@ class DateClock extends Component {
     )
   }
 }
+
 export default DateClock;

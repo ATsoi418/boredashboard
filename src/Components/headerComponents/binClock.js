@@ -80,5 +80,4 @@ class BinClock extends Component {
   }
 }
 
-
 export default BinClock;
