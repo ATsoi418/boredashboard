@@ -74,9 +74,7 @@ class BinClock extends Component {
   render() {
     return (
       <div className={"clock "+((window.location.pathname)==="/" ? 'fade-out' : 'fade-in')}>
-        {
-        this.state.digits.map(digit => <BinaryDigitGroup group={digit} />)
-        }
+        {this.state.digits.map(digit => <BinaryDigitGroup group={digit} />)}
       </div>
     );
   }

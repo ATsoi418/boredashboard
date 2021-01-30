@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch,faEye,faCog,faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 import BinClock from './binClock.js';
-// import DateClock from './dateClock.js';
+import DateClock from './dateClock.js';
 
 
 class Header extends Component {
@@ -17,9 +17,9 @@ class Header extends Component {
         <div id="binClock">
           <BinClock />
         </div>
-        {/* <div id="dateClock">
+        <div id="dateClock">
           <DateClock />
-        </div> */}
+        </div>
         <nav>
           <ul>
             <li>

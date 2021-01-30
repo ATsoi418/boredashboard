@@ -9,8 +9,9 @@ header {
 
     .logo {
         position: absolute;
-        top: 50%; left: 15px;
+        top: 50%; left: 20px;
         @include translateY(-50%);
+        font-size: 20px;
 
         a {
             color: white;
@@ -22,7 +23,7 @@ header {
         .fade-in {
             visibility: visible;
             opacity: 1;
-            transition: opacity 0.5s linear;
+            transition: visibility 0s 0.8s, opacity 1.7s linear;
         }
 
         .fade-out {
@@ -58,7 +59,25 @@ header {
                 }
             }
         }
+    }
+
+    #dateClock {
         
+        .onHome {
+            @include translateY(-50%);
+            @include transition(2s ease-in-out);
+        }
+
+        .offHome {
+            @include translate(130px, -50%);
+            @include transition(2s ease-in-out);
+        }
+
+        .dateClock {
+            display: flex;
+            position: absolute;
+            top: 50%; left: 250px;
+        }
     }
 
     nav {

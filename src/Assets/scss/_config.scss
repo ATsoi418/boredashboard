@@ -11,6 +11,18 @@ $turnDuration: 0.6s;
 
 // Mixins
 
+@mixin translate($e, $f) {
+    -webkit-transform: translate($e, $f);
+    -moz-transform: translate($e, $f);
+    transform: translate($e, $f);
+}
+
+@mixin translateX($e) {
+    -webkit-transform: translateX($e);
+    -moz-transform: translateX($e);
+    transform: translateX($e);
+}
+
 @mixin translateY($e) {
     -webkit-transform: translateY($e);
     -moz-transform: translateY($e);
