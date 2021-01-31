@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FlipClock from './flipClock.js';
+import Calendar from './calendar.js';
 // import logo from './logo.svg';
 
 class Homepage extends Component {
@@ -8,6 +9,9 @@ class Homepage extends Component {
       <div className="container-fluid">
           <div id="flipClock">
             <FlipClock />
+          </div>
+          <div id="calendar">
+            <Calendar />
           </div>
       </div>
     );
