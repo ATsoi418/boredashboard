@@ -19,13 +19,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <Sidenav />
           <Header />
-            <Sidenav />
-            <div className="content">
-              <Route exact path='/' component={Homepage} />
-              <Route exact path='/config' component={Config} />
-              <Route exact path='/projmon' component={ProjMon} />
-            </div>
+          <div className="content">
+            <Route exact path='/' component={Homepage} />
+            <Route exact path='/config' component={Config} />
+            <Route exact path='/projmon' component={ProjMon} />
+          </div>
           {/* <Footer /> */}
         </div>
       </Router>

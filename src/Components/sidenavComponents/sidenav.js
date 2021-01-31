@@ -7,6 +7,9 @@ class Sidenav extends Component {
   render() {
     return (
       <div className="sidenav">
+        <div className="logo">
+          <Link to="/">BOREDASHBOARD</Link>
+        </div>
         <nav>
           <ul>
             <li>

@@ -11,9 +11,6 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="logo">
-          <Link to="/">BOREDASHBOARD</Link>
-        </div>
         <div id="binClock">
           <BinClock />
         </div>
