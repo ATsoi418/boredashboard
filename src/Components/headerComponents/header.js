@@ -6,7 +6,6 @@ import { faSearch,faEye,faCog,faUserCircle } from '@fortawesome/free-solid-svg-i
 import BinClock from './binClock.js';
 import DateClock from './dateClock.js';
 
-
 class Header extends Component {
   render() {
     return (

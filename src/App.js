@@ -13,7 +13,6 @@ import Homepage from './Components/pages/homeComponents/home';
 import SysMon from './Components/pages/sysmonComponents/sysMon';
 import ProjMon from './Components/pages/projMon';
 import Config from './Components/pages/config';
-// import Footer from './Components/footerComponents/footer';
 
 class App extends Component {
   render() {
@@ -28,7 +27,6 @@ class App extends Component {
             <Route exact path='/sysmon' component={SysMon} />
             <Route exact path='/projmon' component={ProjMon} />
           </div>
-          {/* <Footer /> */}
         </div>
       </Router>
     );
