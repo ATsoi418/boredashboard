@@ -21,7 +21,7 @@ class DateClock extends Component {
   
   render() {
     return (
-      <div className={"dateClock "+((window.location.pathname)==="/" ? 'onHome' : 'offHome')}>
+      <div className={"dateClock "+((window.location.pathname)==="/" ? 'onHome' : '')}>
         {this.state.dateNow}        
       </div>
     )

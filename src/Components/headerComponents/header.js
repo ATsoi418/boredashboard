@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch,faEye,faCog,faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
-import BinClock from './binClock.js';
-import DateClock from './dateClock.js';
+import BinClock from './binClock';
+import DateClock from './dateClock';
 
 class Header extends Component {
   render() {

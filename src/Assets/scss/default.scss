@@ -9,22 +9,10 @@ header {
 
     #binClock {
         
-        .fade-in {
-            visibility: visible;
-            opacity: 1;
-            transition: visibility 0s 0.8s, opacity 1.7s linear;
-        }
-
-        .fade-out {
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s 0.5s, opacity 0.5s linear;
-        }
-
         .clock {
             display: flex;
             position: absolute;
-            top: 50%; left: 250px;
+            top: 50%; left: 270px;
             @include translateY(-50%);
 
             .binary-digit-group {
@@ -48,24 +36,23 @@ header {
                 }
             }
         }
+        
+        .onHome {
+            visibility: hidden;
+        }
     }
 
     #dateClock {
         
-        .onHome {
-            @include translateY(-50%);
-            @include transition(2s ease-in-out);
-        }
-
-        .offHome {
-            @include translate(130px, -50%);
-            @include transition(2s ease-in-out);
-        }
-
         .dateClock {
             display: flex;
             position: absolute;
-            top: 50%; left: 250px;
+            top: 50%; left: 400px;
+            @include translateY(-50%);
+        }
+
+        .onHome {
+            visibility: hidden;
         }
     }
 
@@ -95,6 +82,7 @@ header {
 .sidenav {
     position: absolute;
     display: block;
+    z-index: 999;
     min-width: 225px;
     max-width: 250px;
     height: 100%;

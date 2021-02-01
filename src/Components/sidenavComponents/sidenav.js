@@ -13,21 +13,21 @@ class Sidenav extends Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">
-                <span class="navIcon"><FontAwesomeIcon icon={faNewspaper} size="s"/></span>
-                <span class="navText">Dashboard</span>
+              <Link to="/dashboard">
+                <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
+                <span className="navText">Dashboard</span>
               </Link>
             </li>
             <li>
               <Link to="/sysmon">
-                <span class="navIcon"><FontAwesomeIcon icon={faSolarPanel} size="s"/></span>
-                <span class="navText">Systems Monitor</span>
+                <span className="navIcon"><FontAwesomeIcon icon={faSolarPanel} size="sm"/></span>
+                <span className="navText">Systems Monitor</span>
               </Link>
             </li>
             <li>
               <Link to="/projmon">
-                <span class="navIcon"><FontAwesomeIcon icon={faShapes} size="s"/></span>
-                <span class="navText">Project Monitor</span>
+                <span className="navIcon"><FontAwesomeIcon icon={faShapes} size="sm"/></span>
+                <span className="navText">Project Monitor</span>
               </Link>
             </li>
           </ul>

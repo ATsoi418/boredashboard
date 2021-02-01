@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 
-const Pip = ({isOn}) =>
+const Pip = ({isOn}) => (
   <div className={`pip ${isOn && 'pip--on'}`}></div>
+)
 
-const BinaryDigit = ({base2NumberAsArray}) =>
+const BinaryDigit = ({base2NumberAsArray}) => (
   <div className="binary-digit">
     {
-      base2NumberAsArray.map((pip, idx )=> <Pip key={idx} isOn={pip === 1} />)
+      base2NumberAsArray.map((pip, idx ) => <Pip key={idx} isOn={pip === 1} />)
     }
  </div>
+)
 
-const BinaryDigitGroup = ({group}) =>
+const BinaryDigitGroup = ({group}) => (
   <div className="binary-digit-group">
     {
       group.map((binaryDigit, idx) => <BinaryDigit base2NumberAsArray={binaryDigit} key={idx} /> )
     }
   </div>
+)
 
 function numberToBinary(base10Number) {
   const base2Values = [8, 4, 2, 1];
@@ -73,7 +76,7 @@ class BinClock extends Component {
   
   render() {
     return (
-      <div className={"clock "+((window.location.pathname)==="/" ? 'fade-out' : 'fade-in')}>
+      <div className={"clock "+((window.location.pathname)==="/" ? 'onHome' : '')}>
         {this.state.digits.map(digit => <BinaryDigitGroup group={digit} />)}
       </div>
     );
