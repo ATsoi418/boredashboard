@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper,faSolarPanel,faShapes,faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 class Sidenav extends Component {
 
@@ -19,7 +19,7 @@ class Sidenav extends Component {
 
   render() {
 
-    const show = (this.state.menu) ? "show" : "" ;
+    const show = (this.state.menu) ? " show" : "" ;
     
     return (
       <div className="sidenav">
@@ -47,19 +47,16 @@ class Sidenav extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/" className="dropdown-toggle">
+              <Link to="#" onClick={ this.toggleMenu }>
                 <span className="navIcon"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
                 <span className="navText">Solvers</span>
+                <span className={"navToggleButton" + show}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
               </Link>
-              <button className="navbar-toggler" type="button" onClick={ this.toggleMenu }>
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div className={"collapse navbar-collapse " + show}>
-                <ul className="navbar-nav">
-                  <li><Link to="/" className="">Home</Link></li>
-                  <li><Link to="/" className="">Features</Link></li>
-                  <li><Link to="/" className="">Pricing</Link></li>
-                  <li><Link to="/" className="">logout</Link></li>
+              <div className={"collapse" + show}>
+                <ul>
+                  <li><Link to="#">Calculator</Link></li>
+                  <li><Link to="#">Texas Holdem</Link></li>
+                  <li><Link to="#">24 Points</Link></li>
                 </ul>
               </div>
             </li>

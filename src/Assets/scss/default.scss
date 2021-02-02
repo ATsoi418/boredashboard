@@ -83,16 +83,16 @@ header {
     position: absolute;
     display: block;
     z-index: 999;
-    min-width: 225px;
+    min-width: 250px;
     max-width: 250px;
     height: 100%;
     min-height: 100vh;
-    font-size: 16px;
+    font-size: 14px;
 
     .logo {
         position: absolute;
-        top: 45px; left: 20px;
-        font-size: 20px;
+        top: 45px; left: 25px;
+        font-size: 18px;
 
         a {
             color: white;
@@ -101,15 +101,26 @@ header {
 
     nav {
         position: absolute;
+        width: 100%;
         top: 150px;
-        left: 30px;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 0px 10px 10px 0px;
+        // below for "onHome"
+        background-color: rgba(255,255,255,0.25);
 
         ul li {
             margin-bottom: 20px;
-            
+
             a {
+                justify-content: space-around;
                 line-height: normal;
                 color: white;
+
+                &:hover {
+                    background-color: $navyBlue;
+                }
 
                 .navIcon {
                     width: 30px;
@@ -118,6 +129,31 @@ header {
 
                 .navIcon svg {
                     margin-right: 5px;
+                }
+            
+            }
+
+            .navToggleButton {
+                position: absolute;
+                right: 0px;
+                margin-right: 20px;
+                border: none;
+                background: none;
+                color: white;
+
+                @include transition(.2s ease-in-out);
+
+                &.show {
+                    transform: rotate(90deg);
+                }
+            }
+
+            .collapse {
+                margin-top: 20px;
+                margin-left: 25px;
+
+                ul li {
+                    margin-bottom: 10px;
                 }
             }
         
@@ -412,9 +448,6 @@ header {
             .row:last-child {
                 border-bottom: none;
             }
-            
-            
-
         }
     }
 }
