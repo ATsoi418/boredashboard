@@ -28,38 +28,38 @@ class Sidenav extends Component {
         </div>
         <nav>
           <ul>
-            <li>
-              <Link to="/dashboard">
+            <Link to="/dashboard">
+              <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
                 <span className="navText">Dashboard</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/sysmon">
+              </li>
+            </Link>
+            <Link to="/sysmon">
+              <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faSolarPanel} size="sm"/></span>
                 <span className="navText">Systems Monitor</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/projmon">
+              </li>
+            </Link>
+            <Link to="/projmon">
+              <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faShapes} size="sm"/></span>
                 <span className="navText">Project Monitor</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="#" onClick={ this.toggleMenu }>
+              </li>
+            </Link>
+            <Link to="#" onClick={ this.toggleMenu }>
+              <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
                 <span className="navText">Solvers</span>
                 <span className={"navToggleButton" + show}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
-              </Link>
+                </li>
+            </Link>
               <div className={"collapse" + show}>
                 <ul>
-                  <li><Link to="#">Calculator</Link></li>
-                  <li><Link to="#">Texas Holdem</Link></li>
-                  <li><Link to="#">24 Points</Link></li>
+                  <Link to="#"><li>Calculator</li></Link>
+                  <Link to="#"><li>Texas Holdem</li></Link>
+                  <Link to="#"><li>24 Points</li></Link>
                 </ul>
               </div>
-            </li>
           </ul>
         </nav>
       </div>

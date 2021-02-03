@@ -4,7 +4,10 @@ import Calendar from './calendar.js';
 class Dashboard extends Component {
   render() {
     return (
-      <div id="mainContent" className="container-fluid">
+      <div id="mainContent">
+          <h1>
+            Dashboard
+          </h1>
           <div id="calendar">
             <Calendar />
           </div>

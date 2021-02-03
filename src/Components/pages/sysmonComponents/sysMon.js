@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class SysMon extends Component {
   render() {
     return (
-      <div id="mainContent" className="container-fluid">
+      <div id="mainContent">
         <h1>
             Systems Monitor
         </h1>
