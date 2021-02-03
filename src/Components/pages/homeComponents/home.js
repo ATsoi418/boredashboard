@@ -5,7 +5,7 @@ import FlipClock from './flipClock.js';
 class Homepage extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div id="mainContent" className="container-fluid">
           <div id="flipClock">
             <FlipClock />
           </div>

@@ -87,12 +87,6 @@ a {
     line-height: 24px;
 }
 
-.content {
-    margin-top: 50px;
-    margin-left: 250px;
-    align-items: stretch;
-}
-
 .fa-spin-hover:hover {
     @include fa-spin(5s);
 }

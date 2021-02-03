@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ProjMon extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div id="mainContent">
           <h1>
               Project Monitor
           </h1>

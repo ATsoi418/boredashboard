@@ -22,7 +22,7 @@ class Sidenav extends Component {
     const show = (this.state.menu) ? " show" : "" ;
     
     return (
-      <div className="sidenav">
+      <div id="sidenav">
         <div className="logo">
           <Link to="/">BOREDASHBOARD</Link>
         </div>

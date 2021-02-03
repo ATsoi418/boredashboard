@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Config extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div id="mainContent" className="container-fluid">
         <h1>
             Config
         </h1>

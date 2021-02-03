@@ -1,93 +1,23 @@
 @import "_config.scss";
+// @import "_style.scss";
 
-
-header {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 120px;
-
-    #binClock {
-        
-        .clock {
-            display: flex;
-            position: absolute;
-            top: 50%; left: 270px;
-            @include translateY(-50%);
-
-            .binary-digit-group {
-                display: flex;
-                margin: 0 6px;
-
-                .binary-digit
-                    .pip {
-                    width: 5px;
-                    height: 5px;
-                    margin: 3px;
-                    background-color: #525252;
-                    border-radius: 100%;
-                    transition: all .3s ease-in;
-                }
-
-                .binary-digit
-                    .pip--on {
-                    background-color: #48d8b8;
-                    transform: scale(1.1);
-                }
-            }
-        }
-        
-        .onHome {
-            visibility: hidden;
-        }
-    }
-
-    #dateClock {
-        
-        .dateClock {
-            display: flex;
-            position: absolute;
-            top: 50%; left: 400px;
-            @include translateY(-50%);
-        }
-
-        .onHome {
-            visibility: hidden;
-        }
-    }
-
-    nav {
-        position: absolute;
-        top: 50%; right: 45px;
-        @include translateY(-50%);
-
-        ul li {
-            display: inline-block;
-            margin-right: 20px;
-
-            .moveLeft-hover:hover{
-                transform: translateX(-100px);
-                transition: all 0.3s ease;
-            }
-            
-            a {
-                font-size: 18px;
-                line-height: normal;
-                color: white;
-            }
-        }
-    }
+.wrapper {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "sidenav content";
+    justify-content: stretch;
+    justify-items: stretch;
 }
 
-.sidenav {
-    position: absolute;
-    display: block;
+#sidenav {
+    grid-area: sidenav;
+    width: 250px;
     z-index: 999;
-    min-width: 250px;
-    max-width: 250px;
-    height: 100%;
     min-height: 100vh;
-    font-size: 14px;
+    font-size: 16px;
+    @include transition(.3s ease-in-out);
 
     .logo {
         position: absolute;
@@ -101,7 +31,7 @@ header {
 
     nav {
         position: absolute;
-        width: 100%;
+        width: inherit;
         top: 150px;
         padding-left: 30px;
         padding-top: 30px;
@@ -114,7 +44,6 @@ header {
             margin-bottom: 20px;
 
             a {
-                justify-content: space-around;
                 line-height: normal;
                 color: white;
 
@@ -125,12 +54,11 @@ header {
                 .navIcon {
                     width: 30px;
                     display: inline-block;
-                }
 
-                .navIcon svg {
-                    margin-right: 5px;
+                    svg {
+                        margin-right: 5px;
+                    }
                 }
-            
             }
 
             .navToggleButton {
@@ -158,6 +86,93 @@ header {
             }
         
         }
+    }
+}
+
+#content {
+    grid-area: content;
+}
+
+header {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 120px;
+    
+    nav {
+        position: absolute;
+        top: 50%; right: 45px;
+        @include translateY(-50%);
+
+        ul li {
+            display: inline-block;
+            margin-right: 20px;
+
+            .moveLeft-hover:hover{
+                transform: translateX(-100px);
+                transition: all 0.3s ease;
+            }
+            
+            a {
+                font-size: 18px;
+                line-height: normal;
+                color: white;
+            }
+        }
+    }
+}
+
+#mainContent {
+    grid-area: maincontent;
+}
+
+
+#binClock {
+        
+    .clock {
+        display: flex;
+        position: absolute;
+        top: 50%; left: 0px;
+        @include translateY(-50%);
+
+        .binary-digit-group {
+            display: flex;
+            margin: 0 6px;
+
+            .binary-digit
+                .pip {
+                width: 5px;
+                height: 5px;
+                margin: 3px;
+                background-color: #525252;
+                border-radius: 100%;
+                transition: all .3s ease-in;
+            }
+
+            .binary-digit
+                .pip--on {
+                background-color: #48d8b8;
+                transform: scale(1.1);
+            }
+        }
+    }
+    
+    .onHome {
+        visibility: hidden;
+    }
+}
+
+#dateClock {
+    
+    .dateClock {
+        display: flex;
+        position: absolute;
+        top: 50%; left: 150px;
+        @include translateY(-50%);
+    }
+
+    .onHome {
+        visibility: hidden;
     }
 }
 
@@ -301,23 +316,23 @@ header {
     }
 }
 
-.icon {
-    font-family: 'Material Icons', serif;
-    font-style: normal;
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-  
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
-}
+// .icon {
+//     font-family: 'Material Icons', serif;
+//     font-style: normal;
+//     display: inline-block;
+//     vertical-align: middle;
+//     line-height: 1;
+//     text-transform: none;
+//     letter-spacing: normal;
+//     word-wrap: normal;
+//     white-space: nowrap;
+//     direction: ltr;
+
+//     -webkit-font-smoothing: antialiased;
+//     text-rendering: optimizeLegibility;
+//     -moz-osx-font-smoothing: grayscale;
+//     font-feature-settings: 'liga';
+// }
 
 #calendar {
     // visibility: hidden;
@@ -332,7 +347,7 @@ header {
         width: 100%;
         background: var(--neutral-color);
         border: 1px solid var(--border-color);
-      
+    
         .header {
             text-transform: uppercase;
             font-weight: 700;
@@ -360,7 +375,7 @@ header {
                 margin-right: 1em;
             }
         }
-      
+    
         .days {
             text-transform: uppercase;
             font-weight: 400;
@@ -369,7 +384,7 @@ header {
             padding: .75em 0;
             border-bottom: 1px solid var(--border-color);
         }
-      
+    
         .body {
             .row {
                 border-bottom: 1px solid var(--border-color);
@@ -405,7 +420,7 @@ header {
                         letter-spacing: -.07em;
                     }
                 }
-          
+        
                 .cell:hover {
                     background: var(--bg-color);
                     transition: 0.5s ease-out;
@@ -444,7 +459,7 @@ header {
                     pointer-events: none;
                 }
             }
-      
+    
             .row:last-child {
                 border-bottom: none;
             }

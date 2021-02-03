@@ -15,14 +15,15 @@ import SysMon from './Components/pages/sysmonComponents/sysMon';
 import ProjMon from './Components/pages/projmonComponents/projMon';
 import Config from './Components/pages/config';
 
+
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="wrapper">
           <Sidenav />
-          <Header />
-          <div className="content">
+          <div id="content">
+            <Header />
             <Route exact path='/' component={Homepage} />
             <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/sysmon' component={SysMon} />
