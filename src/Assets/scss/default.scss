@@ -9,8 +9,7 @@
         "sidenav content";
     justify-content: stretch;
     justify-items: stretch;
-
-    overflow: auto;
+    overflow: hidden;
 }
 
 #sidenav {
@@ -19,6 +18,8 @@
     z-index: 999;
     min-height: 100vh;
     font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     @include transition(.3s ease-in-out);
 
     .logo {
@@ -39,9 +40,6 @@
         padding-bottom: 30px;
         border-radius: 0px 10px 10px 0px;
 
-        // below for "onHome"
-        // background-color: rgba(255,255,255,0.25);
-
         ul {
 
             a {
@@ -52,10 +50,14 @@
                 li {
                     padding-left: 15px;
                     margin-left: 15px;
-                    margin-bottom: 20px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    border-radius: 5px;
 
                     &:hover {
-                        background-color: $navyBlue;
+                        background-color: rgba(255,255,255,0.1);
                     }
 
                     .navToggleButton {
@@ -100,6 +102,7 @@
 
 #content {
     grid-area: content;
+    overflow: hidden;
 }
 
 header {
@@ -117,9 +120,58 @@ header {
             display: inline-block;
             margin-right: 20px;
 
+            .ViewToggle{
+                -webkit-appearance: none;
+                position: relative;
+                outline: none;
+                align-self: baseline;
+                top: 5px;
+                width: 50px;
+                height: 25px;
+                border-radius: 12.5px;
+                background-color: goldenrod;
+                background-image: url("../img/day.png");
+                background-size: cover;
+                transition: background-image .90s;
+                box-shadow: 0px 1px 3px 1px gray;
+            }
+
+            .ViewToggle:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 25px;
+                width: 25px;
+                background-color: goldenrod;
+                border-radius: 12.5px;
+                transition: all .9s;
+                background-color: #F7CA33;
+            }
+
+            .ViewToggle:checked {
+                background-image: url("../img/night.png");
+                transition: background-image .90s;
+            }
+              
+            .ViewToggle:checked:before {
+                transform: translate(100%);
+                transition: all .9s;
+                background-color: #ECF0F3;
+            }
+
             .moveLeft-hover:hover{
                 transform: translateX(-100px);
-                transition: all 0.3s ease;
+                @include transition(.3s ease-in-out);
+            }
+
+            .fa-spin-hover:hover {
+                @include fa-spin(5s);
+            }
+
+            .fa-waddle-hover:hover {
+                transform: rotate(-30deg);
+                @include transition(.3s ease-in-out);
             }
             
             a {
@@ -133,8 +185,11 @@ header {
 
 #mainContent {
     grid-area: maincontent;
+    padding: 20px;
+    right: -17px;
+    overflow-x: visible;
+    overflow-y: scroll;
 }
-
 
 #binClock {
         
@@ -474,4 +529,11 @@ header {
             }
         }
     }
+}
+
+#markdown-content {
+    background-color: rgba(255,255,255,0.7);
+    border: none;
+    min-width: 850px;
+    min-height: 500px;
 }

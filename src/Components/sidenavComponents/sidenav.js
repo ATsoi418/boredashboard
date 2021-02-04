@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faNewspaper,faPaperPlane,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 class Sidenav extends Component {
 
@@ -32,6 +32,12 @@ class Sidenav extends Component {
               <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
                 <span className="navText">Dashboard</span>
+              </li>
+            </Link>
+            <Link to="/scripter">
+              <li>
+                <span className="navIcon"><FontAwesomeIcon icon={faPaperPlane} size="sm"/></span>
+                <span className="navText">Scripter</span>
               </li>
             </Link>
             <Link to="/sysmon">

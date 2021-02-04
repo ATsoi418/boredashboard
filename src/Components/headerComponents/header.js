@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch,faEye,faCog,faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faSearch,faEye,faCog,faBroom } from '@fortawesome/free-solid-svg-icons'
 
 import BinClock from './binClock';
 import DateClock from './dateClock';
@@ -23,13 +23,13 @@ class Header extends Component {
             </li>
             <li>|</li>
             <li>
-              <Link to="#"><FontAwesomeIcon icon={faEye}/></Link>
+              <input type="checkbox" className="ViewToggle"/>
             </li>
             <li>
               <Link to="/config"><FontAwesomeIcon icon={faCog} className="fa-spin-hover"/></Link>
             </li>
             <li>
-              <Link to="/user"><FontAwesomeIcon icon={faUserCircle}/></Link>
+              <Link to="/start"><FontAwesomeIcon icon={faBroom} className="fa-waddle-hover"/></Link>
             </li>
           </ul>
         </nav>
