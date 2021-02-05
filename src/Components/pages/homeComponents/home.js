@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import FlipClock from './flipClock.js';
-// import logo from './logo.svg';
+import Calendar from './calendar.js';
 
-class Homepage extends Component {
+class Home extends Component {
   render() {
     return (
-      <div id="mainContent" className="container-fluid">
-          <div id="flipClock">
-            <FlipClock />
+      <div id="mainContent">
+          <h1>
+            Dashboard
+          </h1>
+          <div id="calendar">
+            <Calendar />
           </div>
       </div>
     );
   }
 }
 
-export default Homepage;
+export default Home;

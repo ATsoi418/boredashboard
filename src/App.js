@@ -10,7 +10,7 @@ import './Assets/css/default.min.css'
 import Header from './Components/headerComponents/header';
 import Sidenav from './Components/sidenavComponents/sidenav';
 import Homepage from './Components/pages/homeComponents/home';
-import Dashboard from './Components/pages/dashboardComponents/dashboard';
+import Overlay from './Components/pages/overlayComponents/overlay';
 import SysMon from './Components/pages/sysmonComponents/sysMon';
 import ProjMon from './Components/pages/projmonComponents/projMon';
 import MarkdownEditor from './Components/pages/scripterComponents/scripter';
@@ -25,8 +25,8 @@ class App extends Component {
           <Sidenav />
           <div id="content">
             <Header />
+            <Route exact path='/overlay' component={Overlay} />
             <Route exact path='/' component={Homepage} />
-            <Route exact path='/dashboard' component={Dashboard} />
             <Route exact path='/sysmon' component={SysMon} />
             <Route exact path='/projmon' component={ProjMon} />
             <Route exact path='/scripter' component={MarkdownEditor} />

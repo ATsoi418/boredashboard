@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faNewspaper,faPaperPlane,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper,faPaperPlane,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 class Sidenav extends Component {
 
@@ -18,17 +18,15 @@ class Sidenav extends Component {
   }
 
   render() {
-
     const show = (this.state.menu) ? " show" : "" ;
-    
     return (
       <div id="sidenav">
         <div className="logo">
-          <Link to="/">BOREDASHBOARD</Link>
+          <Link to="/overlay">BOREDASHBOARD</Link>
         </div>
         <nav>
           <ul>
-            <Link to="/dashboard">
+            <Link to="/">
               <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
                 <span className="navText">Dashboard</span>

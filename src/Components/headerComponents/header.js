@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch,faEye,faCog,faBroom } from '@fortawesome/free-solid-svg-icons'
+import { faSearch,faCog,faBroom } from '@fortawesome/free-solid-svg-icons'
 
 import BinClock from './binClock';
 import DateClock from './dateClock';
