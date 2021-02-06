@@ -6,7 +6,8 @@ class MarkdownEditor extends Component {
     super(props);
     this.md = new Remarkable();
     this.handleChange = this.handleChange.bind(this);
-    this.state = { value: `_${Date()}_` };
+    this.time = new Date();
+    this.state = { value: `_${this.time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}_` };
   }
   
   handleChange(e) {
@@ -24,13 +25,13 @@ class MarkdownEditor extends Component {
             Scripter
           </h1>
           <div className="MarkdownEditor">
+            <div 
+                id="markdown-output"
+                dangerouslySetInnerHTML={this.getRawMarkup()}/>
             <textarea 
                 id="markdown-input" 
                 onChange={this.handleChange} 
                 defaultValue={this.state.value}/>
-            <div 
-                id="markdown-output"
-                dangerouslySetInnerHTML={this.getRawMarkup()}/>
           </div>
           <div>
               <p>export</p>

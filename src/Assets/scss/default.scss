@@ -532,22 +532,33 @@ header {
 }
 
 .MarkdownEditor{
-    
+    display: absolute;
+    width: 100%;
+
+    #markdown-output {
+        position: relative;
+        float: left;
+        
+        // background-color:yellowgreen;
+        width: 50%;
+        min-height: 250px;
+        margin: 0 10 5 0;
+    }
 
     #markdown-input {
-        // background-color: rgba(255,255,255,0.7);
-        display: flex;
+        // overflow-y: scroll;
+        position: relative;
+        float: left;
+
         background: none;
+        width: 40%;
+        min-height: 250px;
+        max-height: none;
         border-color: rgba(72,216,184,0.5);
         border-width: 2px;
         border-radius: 10px;
-        width: #{'min(45%, 400px)'};
-        min-height: 250px;
+        margin: 0 5 10 0;
         padding: 10px;
         color: white;
-    }
-
-    #markdown-output {
-        display: flex;
     }
 }
