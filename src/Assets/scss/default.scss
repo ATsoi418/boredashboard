@@ -531,14 +531,23 @@ header {
     }
 }
 
-#markdown-content {
-    // background-color: rgba(255,255,255,0.7);
-    background: none;
-    border-color: rbg(255,255,255);
-    border-width: 1px;
-    border-radius: 10px;
-    width: #{'min(95%, 875px)'};
-    min-height: 250px;
-    padding: 10px;
-    color: white;
+.MarkdownEditor{
+    
+
+    #markdown-input {
+        // background-color: rgba(255,255,255,0.7);
+        display: flex;
+        background: none;
+        border-color: rgba(72,216,184,0.5);
+        border-width: 2px;
+        border-radius: 10px;
+        width: #{'min(45%, 400px)'};
+        min-height: 250px;
+        padding: 10px;
+        color: white;
+    }
+
+    #markdown-output {
+        display: flex;
+    }
 }

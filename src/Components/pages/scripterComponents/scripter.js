@@ -24,15 +24,12 @@ class MarkdownEditor extends Component {
             Scripter
           </h1>
           <div className="MarkdownEditor">
-            <p>What would you like to write today?</p>
-            <br/>
             <textarea 
-                id="markdown-content" 
+                id="markdown-input" 
                 onChange={this.handleChange} 
                 defaultValue={this.state.value}/>
-            <br/><br/>
             <div 
-                className="content" 
+                id="markdown-output"
                 dangerouslySetInnerHTML={this.getRawMarkup()}/>
           </div>
           <div>
