@@ -4,113 +4,33 @@
 .wrapper {
     display: grid;
     grid-template-columns: 250px 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 100px 1fr;
     grid-template-areas: 
-        "sidenav content";
+        "header header"
+        "sidenav maincontent";
     justify-content: stretch;
     justify-items: stretch;
     overflow: hidden;
 }
 
-#sidenav {
-    grid-area: sidenav;
-    width: 250px;
-    z-index: 99;
-    min-height: 100vh;
-    font-size: 16px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    @include transition(.3s ease-in-out);
-
-    .logo {
+header {
+    grid-area: header;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+    
+    #header-logo {
         position: absolute;
-        top: 45px; left: 25px;
+        top: 50%; left: 25px;
         font-size: 18px;
+        @include translateY(-50%);
 
         a {
             color: white;
         }
     }
 
-    nav {
-        position: absolute;
-        width: inherit;
-        top: 150px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        border-radius: 0px 10px 10px 0px;
-
-        ul {
-
-            a {
-                line-height: normal;
-                color: white;
-                
-
-                li {
-                    padding-left: 15px;
-                    margin-left: 15px;
-                    margin-top: 5px;
-                    margin-bottom: 5px;
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                    border-radius: 5px;
-
-                    &:hover {
-                        background-color: rgba(255,255,255,0.1);
-                    }
-
-                    .navToggleButton {
-                        position: absolute;
-                        right: 0px;
-                        margin-right: 20px;
-                        border: none;
-                        background: none;
-                        color: white;
-
-                        @include transition(.2s ease-in-out);
-
-                        &.show {
-                            transform: rotate(90deg);
-                        }
-                    }
-                }
-
-                .navIcon {
-                    width: 30px;
-                    display: inline-block;
-
-                    svg {
-                        margin-right: 5px;
-                    }
-                }
-                
-            }
-
-            .collapse {
-                margin-top: 20px;
-
-                ul li {
-                    padding-left: 25px;
-                    margin-bottom: 10px;
-                }
-            }
-
-        }
-    }
-}
-
-#content {
-    grid-area: content;
-    overflow: hidden;
-}
-
-header {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 120px;
-    
     nav {
         position: absolute;
         top: 50%; right: 45px;
@@ -183,10 +103,93 @@ header {
     }
 }
 
+#sidenav {
+    grid-area: sidenav;
+    width: 250px;
+    z-index: 99;
+    min-height: 100vh;
+    font-size: 16px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    @include transition(.3s ease-in-out);
+
+    nav {
+        position: absolute;
+        width: inherit;
+        top: 150px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-radius: 0px 10px 10px 0px;
+
+        ul {
+
+            a {
+                line-height: normal;
+                color: white;
+                
+
+                li {
+                    padding-left: 15px;
+                    margin-left: 15px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    border-radius: 5px;
+
+                    &:hover {
+                        background-color: rgba(255,255,255,0.1);
+                    }
+
+                    .navToggleButton {
+                        position: absolute;
+                        right: 0px;
+                        margin-right: 20px;
+                        border: none;
+                        background: none;
+                        color: white;
+
+                        @include transition(.2s ease-in-out);
+
+                        &.show {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+
+                .navIcon {
+                    width: 30px;
+                    display: inline-block;
+
+                    svg {
+                        margin-right: 5px;
+                    }
+                }
+                
+            }
+
+            .collapse {
+                margin-top: 20px;
+
+                ul li {
+                    padding-left: 25px;
+                    margin-bottom: 10px;
+                }
+            }
+
+        }
+    }
+}
+
+#content {
+    // grid-area: content;
+    overflow: hidden;
+}
+
 #mainContent {
     grid-area: maincontent;
     padding: 20px;
-    right: -17px;
+    // right: -17px;
     overflow-x: visible;
     overflow-y: scroll;
 }
@@ -196,7 +199,7 @@ header {
     .clock {
         display: flex;
         position: absolute;
-        top: 50%; left: 0px;
+        top: 50%; left: 250px;
         @include translateY(-50%);
 
         .binary-digit-group {
@@ -231,7 +234,7 @@ header {
     .dateClock {
         display: flex;
         position: absolute;
-        top: 50%; left: 150px;
+        top: 50%; left: 400px;
         @include translateY(-50%);
     }
 

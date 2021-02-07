@@ -10,6 +10,9 @@ class Header extends Component {
   render() {
     return (
       <header>
+        <div id="header-logo" className="logo">
+          <Link to="/overlay">BOREDASHBOARD</Link>
+        </div>
         <div id="binClock">
           <BinClock />
         </div>

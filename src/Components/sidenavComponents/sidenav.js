@@ -21,9 +21,6 @@ class Sidenav extends Component {
     const show = (this.state.menu) ? " show" : "" ;
     return (
       <div id="sidenav">
-        <div className="logo">
-          <Link to="/overlay">BOREDASHBOARD</Link>
-        </div>
         <nav>
           <ul>
             <Link to="/">

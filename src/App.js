@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -22,9 +22,9 @@ class App extends Component {
     return (
       <Router>
         <div className="wrapper">
+          <Header />
           <Sidenav />
           <div id="content">
-            <Header />
             <Route exact path='/overlay' component={Overlay} />
             <Route exact path='/' component={Homepage} />
             <Route exact path='/sysmon' component={SysMon} />
