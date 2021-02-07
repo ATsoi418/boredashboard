@@ -26,14 +26,14 @@ class MarkdownEditor extends Component {
           </h1>
           <div className="MarkdownEditor">
             <div 
-                id="markdown-output"
+                className="markdown-output"
                 dangerouslySetInnerHTML={this.getRawMarkup()}/>
             <textarea 
-                id="markdown-input" 
+                className="markdown-input" 
                 onChange={this.handleChange} 
                 defaultValue={this.state.value}/>
           </div>
-          <div>
+          <div className="exportButton">
               <p>export</p>
           </div>
       </div>
