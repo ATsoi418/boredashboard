@@ -7,7 +7,7 @@
     grid-template-rows: 100px 1fr;
     grid-template-areas: 
         "header header"
-        "sidenav maincontent";
+        "content content";
     justify-content: stretch;
     justify-items: stretch;
     overflow: hidden;
@@ -103,6 +103,16 @@ header {
     }
 }
 
+#content {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "sidenav maincontent";
+    width: 100%;
+}
+
 #sidenav {
     grid-area: sidenav;
     width: 250px;
@@ -181,15 +191,9 @@ header {
     }
 }
 
-#content {
-    // grid-area: content;
-    overflow: hidden;
-}
-
 #mainContent {
     grid-area: maincontent;
     padding: 20px;
-    // right: -17px;
     overflow-x: visible;
     overflow-y: scroll;
 }

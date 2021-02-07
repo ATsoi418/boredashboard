@@ -19,12 +19,13 @@ import Config from './Components/pages/config';
 
 class App extends Component {
   render() {
+    // const [modalVisible, setModalVisible] = useState(false);
     return (
       <Router>
         <div className="wrapper">
           <Header />
-          <Sidenav />
           <div id="content">
+            <Sidenav />
             <Route exact path='/overlay' component={Overlay} />
             <Route exact path='/' component={Homepage} />
             <Route exact path='/sysmon' component={SysMon} />
