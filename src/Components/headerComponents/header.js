@@ -12,7 +12,7 @@ class Header extends Component {
     return (
       <header>
         <div id="header-logo" className="logo">
-          <Link to="#" onClick={this.props.onClick}>BOREDASHBOARD</Link>
+          <Link to="#" onClick={this.props.logoOnClick}>BOREDASHBOARD</Link>
         </div>
         <div id="header-info">
           <div id="binClock" className={`${this.props.overlay ? 'onOverlay' : ''}`}>
@@ -32,7 +32,7 @@ class Header extends Component {
               <input type="checkbox" className="ViewToggle"/>
             </li>
             <li>
-              <Link to="/config"><FontAwesomeIcon icon={faCog} className="fa-spin-hover"/></Link>
+              <Link to="/config" onClick={this.props.configOnClick}><FontAwesomeIcon icon={faCog} className="fa-spin-hover"/></Link>
             </li>
             <li>
               <Link to="/start"><FontAwesomeIcon icon={faBroom} className="fa-waddle-hover"/></Link>

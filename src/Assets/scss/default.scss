@@ -43,6 +43,7 @@ header {
         
         #binClock {
 
+            margin-left: 15px;
             margin-right: 25px;
 
             .clock {
@@ -85,6 +86,7 @@ header {
 
         ul li {
             display: inline-block;
+            align-self: center;
             margin-right: 20px;
 
             .ViewToggle{
