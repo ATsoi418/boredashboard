@@ -31,7 +31,8 @@ class MarkdownEditor extends Component {
             <textarea 
                 className="markdown-input" 
                 onChange={this.handleChange} 
-                defaultValue={this.state.value}/>
+                defaultValue={this.state.value}
+                placeholder="What's on your mind?"/>
           </div>
           <div className="exportButton">
               <p>export</p>

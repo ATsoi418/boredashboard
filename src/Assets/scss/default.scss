@@ -170,7 +170,6 @@ header {
     grid-area: content;
     display: flex;
     z-index: 99;
-    // background: rgba(72,216,184,0.5);
     height: 90vh;
     justify-content: space-between;
     align-content: center;
@@ -180,7 +179,7 @@ header {
         margin: auto;
 
         .overlay-item {
-            margin: 25px auto 25px auto;
+            margin: 25px auto 50px auto;
         }
     }
 } 
@@ -414,24 +413,6 @@ header {
     }
 }
 
-// .icon {
-//     font-family: 'Material Icons', serif;
-//     font-style: normal;
-//     display: inline-block;
-//     vertical-align: middle;
-//     line-height: 1;
-//     text-transform: none;
-//     letter-spacing: normal;
-//     word-wrap: normal;
-//     white-space: nowrap;
-//     direction: ltr;
-
-//     -webkit-font-smoothing: antialiased;
-//     text-rendering: optimizeLegibility;
-//     -moz-osx-font-smoothing: grayscale;
-//     font-feature-settings: 'liga';
-// }
-
 #calendar {
 
     display: block;
@@ -553,7 +534,6 @@ header {
 
     .markdown-input {
         position: relative;
-        @include transition(.3s ease-in-out);
 
         background: none;
         width: 95%;
@@ -565,6 +545,12 @@ header {
         margin: 0 5 10 0;
         padding: 10px;
         color: white;
+
+        resize: vertical;
+
+        &:focus {
+            outline: none;
+        }
     }
 
     .exportButton {
