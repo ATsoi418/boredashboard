@@ -15,17 +15,22 @@
 
 header {
     grid-area: header;
-    position: relative;
-    display: block;
+    position: absolute;
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "header-logo header-info header-nav";
     z-index: 100;
     width: 100%;
-    height: 100px;
+    height: 90px;
+    align-items: center;
+    align-content: center;
     
     #header-logo {
-        position: absolute;
-        top: 50%; left: 25px;
+        grid-area: header-logo;
         font-size: 18px;
-        @include translateY(-50%);
+        margin-left: 25px;
 
         a {
             color: white;
@@ -33,19 +38,50 @@ header {
     }
     
     #header-info {
-        position: absolute;
+        grid-area: header-info;
         display: inline-flex;
-        top: 50%; left: 250px;
-        width: 400px;
-        margin-right: auto;
-        @include translateY(-50%);
+        
+        #binClock {
+
+            margin-right: 25px;
+
+            .clock {
+                display: flex;
+
+                .binary-digit-group {
+                    display: flex;
+                    margin: 0 6px;
+
+                    .binary-digit
+                        .pip {
+                        width: 5px;
+                        height: 5px;
+                        margin: 3px;
+                        background-color: #525252;
+                        border-radius: 100%;
+                        transition: all .3s ease-in;
+                    }
+
+                    .binary-digit
+                        .pip--on {
+                        background-color: #48d8b8;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            
+            &.onOverlay {
+                display: none;
+            }
+        }
+
+        #dateClock {
+            align-self: center;
+        }
     }
 
     nav {
-        position: absolute;
-        margin-left: auto;
-        top: 50%; right: 45px;
-        @include translateY(-50%);
+        grid-area: header-nav;
 
         ul li {
             display: inline-block;
@@ -145,9 +181,7 @@ header {
             margin: 25px auto 25px auto;
         }
     }
-}
-
-    
+} 
 
 #sidenav {
     grid-area: sidenav;
@@ -233,51 +267,6 @@ header {
     padding: 20px;
     overflow-x: visible;
     overflow-y: scroll;
-}
-
-#binClock {
-
-    margin-right: 25px;
-
-    .clock {
-        display: flex;
-        // position: relative;
-
-        .binary-digit-group {
-            display: flex;
-            margin: 0 6px;
-
-            .binary-digit
-                .pip {
-                width: 5px;
-                height: 5px;
-                margin: 3px;
-                background-color: #525252;
-                border-radius: 100%;
-                transition: all .3s ease-in;
-            }
-
-            .binary-digit
-                .pip--on {
-                background-color: #48d8b8;
-                transform: scale(1.1);
-            }
-        }
-    }
-    
-    &.onOverlay {
-        display: none;
-    }
-}
-
-#dateClock {
-
-    .dateClock {
-        display: flex;
-        // position: relative;
-        
-    }
-    
 }
 
 #flipClock {
