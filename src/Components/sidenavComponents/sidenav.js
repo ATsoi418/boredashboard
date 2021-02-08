@@ -18,7 +18,7 @@ class Sidenav extends Component {
   }
 
   render() {
-    const show = (this.state.menu) ? " show" : "" ;
+    const showMenu = (this.state.menu) ? " show" : "" ;
     return (
       <div id="sidenav">
         <nav>
@@ -51,10 +51,10 @@ class Sidenav extends Component {
               <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
                 <span className="navText">Solvers</span>
-                <span className={"navToggleButton" + show}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
+                <span className={"navToggleButton" + showMenu}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
                 </li>
             </Link>
-              <div className={"collapse" + show}>
+              <div className={"collapse" + showMenu}>
                 <ul>
                   <Link to="#"><li>Calculator</li></Link>
                   <Link to="#"><li>Texas Holdem</li></Link>

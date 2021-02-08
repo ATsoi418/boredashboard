@@ -7,17 +7,20 @@ import BinClock from './binClock';
 import DateClock from './dateClock';
 
 class Header extends Component {
+
   render() {
     return (
       <header>
         <div id="header-logo" className="logo">
-          <Link to="/overlay">BOREDASHBOARD</Link>
+          <Link to="#" onClick={this.props.onClick}>BOREDASHBOARD</Link>
         </div>
-        <div id="binClock">
-          <BinClock />
-        </div>
-        <div id="dateClock">
-          <DateClock />
+        <div id="header-info">
+          <div id="binClock" className={`${this.props.overlay ? 'onOverlay' : ''}`}>
+            <BinClock />
+          </div>
+          <div id="dateClock" className={`${this.props.overlay ? 'onOverlay' : ''}`}>
+            <DateClock />
+          </div>
         </div>
         <nav>
           <ul>
