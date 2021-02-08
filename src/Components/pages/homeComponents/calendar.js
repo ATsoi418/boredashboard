@@ -3,6 +3,8 @@ import { format, parse ,
          addDays , isSameDay , 
          startOfWeek, endOfWeek , 
          startOfMonth , endOfMonth , addMonths , isSameMonth, subMonths } from 'date-fns';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 class Calendar extends Component {
   state = {
@@ -15,36 +17,37 @@ class Calendar extends Component {
 
     return (
       <div className="header row flex-middle">
-        <div className="col col-start">
+        <div className="col">
           <div className="icon" onClick={this.prevMonth}>
-            chevron_left
+            <FontAwesomeIcon icon={faChevronLeft} size="sm"/>
           </div>
         </div>
-        <div className="col col-center">
+        <div className="col">
           <span>{format(this.state.currentMonth, dateFormat)}</span>
         </div>
-        <div className="col col-end" onClick={this.nextMonth}>
-          <div className="icon">chevron_right</div>
+        <div className="col" onClick={this.nextMonth}>
+          <div className="icon">
+            <FontAwesomeIcon icon={faChevronRight} size="sm"/>
+          </div>
         </div>
       </div>
     );
   }
 
   renderDays() {
-    const dateFormat = "dddd";
-    const days = [];
-
-    let startDate = startOfWeek(this.state.currentMonth);
+    // const dateFormat = "dddd";
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const daysRow = [];
 
     for (let i = 0; i < 7; i++) {
-      days.push(
+      daysRow.push(
         <div className="col col-center" key={i}>
-            {format(addDays(startDate, i), dateFormat)}
+            {days[i]}
         </div>
       );
     }
 
-    return <div className="days row">{days}</div>;
+    return <div className="days row">{daysRow}</div>;
   }
 
   renderCells() {
@@ -74,9 +77,8 @@ class Calendar extends Component {
             }`}
             key={day}
             onClick={() => this.onDateClick(parse(cloneDay))}
-          >
+            >
             <span className="number">{formattedDate}</span>
-            <span className="bg">{formattedDate}</span>
           </div>
         );
         day = addDays(day, 1);
