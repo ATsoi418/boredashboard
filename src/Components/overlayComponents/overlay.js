@@ -8,11 +8,14 @@ class Overlay extends Component {
     return (
       <div className={"overlay collapse" + showOverlay}>
         <div className="overlay-items">
+          <div className="overlay-item">
+            <h1>Hello, Ash</h1>
+          </div>
           <div id="flipClock" className="overlay-item">
             <FlipClock />
           </div>
           <div className="overlay-item">
-            <h1>Hello, Ash</h1>
+            <h3>What's on your mind?</h3>
           </div>
         </div>
       </div>

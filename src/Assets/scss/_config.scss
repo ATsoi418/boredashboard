@@ -3,11 +3,16 @@
 $black: #010000;
 $lightGrey: #e6e6e6;
 $darkGrey: #333;
-$navyBlue: #282c34;
+$navyBlue: rgb(40,44,52);
 $red: #ff1755;
+$roseBrown: rgb(129,88,88);
 
 $easeInOut: cubic-bezier(0.455, 0.03, 0.515, 0.955);
 $turnDuration: 0.6s;
+
+// Styles
+
+@import "_style.scss";
 
 // Mixins
 
@@ -51,11 +56,11 @@ $turnDuration: 0.6s;
 }
 
 body {
-    background: $navyBlue; /* fallback for old browsers */
+    background: $bg_color; /* fallback for old browsers */
     // background: -webkit-linear-gradient(left, $navyBlue, #0d5d74); /* Chrome 10-25, Safari 5.1-6 */
     // background: linear-gradient(to left, $navyBlue 10%, 75%, #0d5d74 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
-    color: white;
+    color: $text_color;
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
@@ -94,7 +99,7 @@ a {
     text-decoration: none !important;
 
     &:hover {
-        color: mediumaquamarine;
+        color: $sec_color;
         text-decoration: none !important;
         @include transition(.4s ease-in-out);
         

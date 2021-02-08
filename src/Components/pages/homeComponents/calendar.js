@@ -16,7 +16,7 @@ class Calendar extends Component {
     const dateFormat = "MMMM yyyy";
 
     return (
-      <div className="header row flex-middle">
+      <div className="header row">
         <div className="col">
           <div className="icon" onClick={this.prevMonth}>
             <FontAwesomeIcon icon={faChevronLeft} size="sm"/>
@@ -36,7 +36,7 @@ class Calendar extends Component {
 
   renderDays() {
     // const dateFormat = "dddd";
-    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const days = ["S","M","T","W","T","F","S"];
     const daysRow = [];
 
     for (let i = 0; i < 7; i++) {

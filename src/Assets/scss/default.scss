@@ -1,5 +1,4 @@
 @import "_config.scss";
-// @import "_style.scss";
 
 .wrapper {
     display: grid;
@@ -17,7 +16,7 @@ header {
     grid-area: header;
     position: absolute;
     display: grid;
-    grid-template-columns: 250px 1fr 250px;
+    grid-template-columns: 250px minmax(0, 1fr) 250px;
     grid-template-rows: auto;
     grid-template-areas: 
         "header-logo header-info header-nav";
@@ -33,18 +32,22 @@ header {
         margin-left: 25px;
 
         a {
-            color: white;
+            color: $link_color;
         }
     }
     
     #header-info {
         grid-area: header-info;
         display: inline-flex;
+        align-items: center;
         
         #binClock {
 
             margin-left: 15px;
             margin-right: 25px;
+            width: 100px;
+            @include transition(width 1s ease-in-out);
+            overflow-x: hidden;
 
             .clock {
                 display: flex;
@@ -58,26 +61,29 @@ header {
                         width: 5px;
                         height: 5px;
                         margin: 3px;
-                        background-color: #525252;
+                        background-color: $third_color;
                         border-radius: 100%;
                         transition: all .3s ease-in;
                     }
 
                     .binary-digit
                         .pip--on {
-                        background-color: #48d8b8;
+                        background-color: $sec_color;
                         transform: scale(1.1);
                     }
                 }
             }
             
             &.onOverlay {
-                display: none;
+                width: 0px;
+                @include transition(width 1s ease-in-out);
             }
         }
 
         #dateClock {
             align-self: center;
+            margin-right: 25px;
+            overflow-x: hidden;
         }
     }
 
@@ -173,13 +179,13 @@ header {
     height: 90vh;
     justify-content: space-between;
     align-content: center;
-    text-align: center;
+    text-align: left;
     
     .overlay-items {
         margin: auto;
 
         .overlay-item {
-            margin: 25px auto 50px auto;
+            margin-bottom: 50px;
         }
     }
 } 
@@ -206,7 +212,7 @@ header {
 
             a {
                 line-height: normal;
-                color: white;
+                color: $link_color;
                 
 
                 li {
@@ -219,7 +225,7 @@ header {
                     border-radius: 5px;
 
                     &:hover {
-                        background-color: rgba(255,255,255,0.1);
+                        background-color: $link_shadow;
                     }
 
                     .navToggleButton {
@@ -228,7 +234,7 @@ header {
                         margin-right: 20px;
                         border: none;
                         background: none;
-                        color: white;
+                        color: $link_color;
 
                         @include transition(.2s ease-in-out);
 
@@ -424,9 +430,9 @@ header {
         display: block;
         position: relative;
         background: none;
-        padding: 5px;
+        padding: 20px;
         width: 100%;
-        border: 3px solid rgba(72,216,184,0.5);
+        border: 3px solid $sec_color_a5;
         border-radius: 7px;
         font-family: 'Quicksand', sans-serif;
     
@@ -500,13 +506,13 @@ header {
                 }
     
                 .selected {
-                    background: rgba(72,216,184,0.2);
+                    background: $sec_color_a2;
                     transition: .5s ease-in;
                 }
     
                 .disabled {
                     color: var(--text-color-light);
-                    pointer-events: none;
+                    // pointer-events: none;
                 }
             }
     
@@ -539,7 +545,7 @@ header {
         width: 95%;
         min-height: 100px;
         max-height: none;
-        border-color: rgba(72,216,184,0.5);
+        border-color: $sec_color_a5;
         border-width: 2px;
         border-radius: 10px;
         margin: 0 5 10 0;
@@ -555,7 +561,7 @@ header {
 
     .exportButton {
         border-radius: 5px;
-        background: rgba(72,216,184,0.5);
+        background: $sec_color_a5;
     }
 
 }
