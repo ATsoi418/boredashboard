@@ -16,16 +16,16 @@ class Calendar extends Component {
     const dateFormat = "MMMM yyyy";
 
     return (
-      <div className="header row">
-        <div className="col">
+      <div className="cal-header">
+        <div className="cal-header-item">
           <div className="icon" onClick={this.prevMonth}>
             <FontAwesomeIcon icon={faChevronLeft} size="sm"/>
           </div>
         </div>
-        <div className="col">
+        <div className="cal-header-item">
           <span>{format(this.state.currentMonth, dateFormat)}</span>
         </div>
-        <div className="col" onClick={this.nextMonth}>
+        <div className="cal-header-item" onClick={this.nextMonth}>
           <div className="icon">
             <FontAwesomeIcon icon={faChevronRight} size="sm"/>
           </div>
@@ -35,19 +35,18 @@ class Calendar extends Component {
   }
 
   renderDays() {
-    // const dateFormat = "dddd";
     const days = ["S","M","T","W","T","F","S"];
     const daysRow = [];
 
     for (let i = 0; i < 7; i++) {
       daysRow.push(
-        <div className="col col-center" key={i}>
+        <div className="cal-day-item" key={i}>
             {days[i]}
         </div>
       );
     }
 
-    return <div className="days row">{daysRow}</div>;
+    return <div className="cal-day-items">{daysRow}</div>;
   }
 
   renderCells() {
@@ -70,7 +69,7 @@ class Calendar extends Component {
         const cloneDay = day;
         days.push(
           <div
-            className={`col cell ${
+            className={`cal-cell ${
               !isSameMonth(day, monthStart)
               ? "disabled"
               : isSameDay(day, selectedDate) ? "selected" : ""
@@ -84,7 +83,7 @@ class Calendar extends Component {
         day = addDays(day, 1);
       }
       rows.push(
-        <div className="row" key={day}>
+        <div className="cal-row" key={day}>
           {days}
         </div>
       );
