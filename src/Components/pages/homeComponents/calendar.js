@@ -89,7 +89,7 @@ class Calendar extends Component {
       );
       days = [];
     }
-    return <div className="body">{rows}</div>;
+    return <div className="cal-body">{rows}</div>;
   }
 
   onDateClick = day => {
