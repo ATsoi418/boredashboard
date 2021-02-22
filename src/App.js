@@ -23,29 +23,36 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      overlay: true
+      overlay:true,
+      nav:true
     };
-    this.toggleOverlay = this.toggleOverlay.bind(this);
-    this.closeOverlay = this.closeOverlay.bind(this);
+    this.toggleOverlay=this.toggleOverlay.bind(this);
+    this.closeOverlay=this.closeOverlay.bind(this);
+    this.toggleNav=this.toggleNav.bind(this);
   }
 
   toggleOverlay(){
-    this.setState({ overlay: !this.state.overlay })
+    this.setState({overlay:!this.state.overlay})
   }
 
   closeOverlay(){
-    this.setState({ overlay: false})
+    this.setState({overlay:false})
+  }
+
+  toggleNav(){
+    this.setState({nav:!this.state.nav})
   }
 
   render() {
+    const onOverlay=(this.state.overlay)?' onOverlay':'';
+    const navState=(this.state.nav)?' showNav':' collapseNav';
     return (
       <Router>
-        
           <div className="wrapper">
             <Header overlay={this.state.overlay} logoOnClick={this.toggleOverlay} configOnClick={this.closeOverlay}/>
             <Overlay overlay={this.state.overlay} />
-            <div className={`content ${this.state.overlay ? 'onOverlay' : ''}`}>
-              <Sidenav />
+            <div className={"content"+onOverlay+navState}>
+              <Sidenav showNav={this.state.nav} navToggleOnClick={this.toggleNav}/>
               <Switch>
               <Route exact path='/' component={Homepage} />
               <Route exact path='/sysmon' component={SysMon} />

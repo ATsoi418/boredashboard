@@ -9,16 +9,17 @@ import DateClock from './dateClock';
 class Header extends Component {
 
   render() {
+    const onOverlay=(this.props.overlay)?"onOverlay":"";
     return (
       <header>
         <div id="header-logo" className="logo">
           <Link to="#" onClick={this.props.logoOnClick}>BOREDASHBOARD</Link>
         </div>
         <div id="header-info">
-          <div id="binClock" className={`${this.props.overlay ? 'onOverlay' : ''}`}>
+          <div id="binClock" className={onOverlay}>
             <BinClock />
           </div>
-          <div id="dateClock" className={`${this.props.overlay ? 'onOverlay' : ''}`}>
+          <div id="dateClock" className={onOverlay}>
             <DateClock />
           </div>
         </div>

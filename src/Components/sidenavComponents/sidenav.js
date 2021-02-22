@@ -1,28 +1,34 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faNewspaper,faPaperPlane,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleLeft,faNewspaper,faPaperPlane,faSolarPanel,faShapes,faLightbulb,faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 class Sidenav extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      menu: false
+      subNav:false
     };
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleSubNav=this.toggleSubNav.bind(this);
   }
 
-  toggleMenu(){
-    this.setState({ menu: !this.state.menu })
+  toggleSubNav(){
+    this.setState({subNav:!this.state.subNav})
   }
 
   render() {
-    const showMenu = (this.state.menu) ? " show" : "" ;
+    const showNav=(this.props.showNav)?" showNav":" collapseNav";
+    const showSubNav=(this.state.subNav)?" showSubNav":"";
     return (
       <div id="sidenav">
         <nav>
           <ul>
+            <Link to="#" onClick={this.props.navToggleOnClick}>
+              <li className="navToggleButton">
+                <span className={"navToggleButton"+showNav}><FontAwesomeIcon icon={faAngleDoubleLeft} size="1x"/></span>
+              </li>
+            </Link>
             <Link to="/">
               <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
@@ -47,14 +53,14 @@ class Sidenav extends Component {
                 <span className="navText">Project Monitor</span>
               </li>
             </Link>
-            <Link to="#" onClick={ this.toggleMenu }>
+            <Link to="#" onClick={ this.toggleSubNav }>
               <li>
                 <span className="navIcon"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
                 <span className="navText">Solvers</span>
-                <span className={"navToggleButton" + showMenu}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
-                </li>
+                <span className={"subNavToggleButton" + showSubNav}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
+              </li>
             </Link>
-              <div className={"collapse" + showMenu}>
+              <div className={"collapse" + showSubNav}>
                 <ul>
                   <Link to="#"><li>Calculator</li></Link>
                   <Link to="#"><li>Texas Holdem</li></Link>
