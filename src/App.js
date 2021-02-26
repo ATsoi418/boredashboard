@@ -6,6 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import './Assets/css/default.min.css'
+// import Cookies from 'universal-cookie';
 
 // Components
 import Header from './Components/headerComponents/header';
@@ -17,6 +18,8 @@ import ProjMon from './Components/pages/projmonComponents/projMon';
 import MarkdownEditor from './Components/pages/scripterComponents/scripter';
 import Config from './Components/pages/config';
 import NotFound from './Components/pages/notfound';
+
+// const cookies = new Cookies();
 
 class App extends Component {
 

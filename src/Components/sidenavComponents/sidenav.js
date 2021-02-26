@@ -82,7 +82,7 @@ class Sidenav extends Component {
             <li className={"subNav"+showSubNav}>
               <span className={"navIcon"+showNav}></span>
               <Link to="#">
-                <span className={"navText"+showNav}>Make Some Suggestions</span>
+                <span className={"navText"+showNav}>Propose Enhancement</span>
                 <span className="navIcon-right"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
               </Link>
             </li>
