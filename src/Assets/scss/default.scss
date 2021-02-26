@@ -588,9 +588,11 @@ header {
 
 .calculatorSimple {
     
+    $calculatorScale: 0.75;
+
     position: relative;
-    width: 320px;
-    height: 520px;
+    width: 320px*$calculatorScale;
+    height: 520px*$calculatorScale;
     
     button {
         display: block;
@@ -613,7 +615,7 @@ header {
         width: 100%;
         height: 100%;
         background: black;
-        box-shadow: 0px 0px 20px 0px #aaa;
+        // box-shadow: 0px 0px 20px 0px #aaa;
         
         display: flex;
         flex-direction: column;
@@ -622,8 +624,8 @@ header {
     .calculator-display {
         color: white;
         background: #1c191c;
-        line-height: 130px;
-        font-size: 6em;
+        line-height: 130px*$calculatorScale;
+        font-size: 6em*$calculatorScale;
         
         flex: 1;
     }
@@ -640,13 +642,13 @@ header {
     }
       
     .calculator-keypad {
-        height: 400px;
+        height: 400px*$calculatorScale;
         
         display: flex;
     }
       
     .calculator .input-keys {
-        width: 240px;
+        width: 240px*$calculatorScale;
     }
       
     .calculator .function-keys {
@@ -662,41 +664,41 @@ header {
     }
       
     .calculator-key {
-        width: 80px;
-        height: 80px;
+        width: 80px*$calculatorScale;
+        height: 80px*$calculatorScale;
         border-top: 1px solid #777;
         border-right: 1px solid #666;  
         text-align: center;
-        line-height: 80px;
+        line-height: 80px*$calculatorScale;
     }
 
     .calculator .function-keys .calculator-key {
-        font-size: 2em;
+        font-size: 2em*$calculatorScale;
     }
 
     .calculator .function-keys .key-multiply {
-        line-height: 50px;
+        line-height: 50px*$calculatorScale;
     }
     
     .calculator .digit-keys .calculator-key {
-        font-size: 2.25em;
+        font-size: 2.25em*$calculatorScale;
     }
 
     .calculator .digit-keys .key-0 {
-        width: 160px;
+        width: 160px*$calculatorScale;
         text-align: left;
-        padding-left: 32px;
+        padding-left: 32px*$calculatorScale;
     }
 
     .calculator .digit-keys .key-dot {
-        padding-top: 1em;
-        font-size: 0.75em;
+        padding-top: 1em*$calculatorScale;
+        font-size: 0.75em*$calculatorScale;
     }
 
     .calculator .operator-keys .calculator-key {
         color: white;
         border-right: 0;
-        font-size: 3em;
+        font-size: 3em*$calculatorScale;
     }
     
     .calculator .function-keys {
