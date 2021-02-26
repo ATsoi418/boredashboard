@@ -8,18 +8,26 @@ class Sidenav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      subNav:false
+      subFeatureRequest:false
     };
-    this.toggleSubNav=this.toggleSubNav.bind(this);
+    this.toggleSubFeatureRequest=this.toggleSubFeatureRequest.bind(this);
   }
 
-  toggleSubNav(){
-    this.setState({ subNav:!this.state.subNav })
+  toggleSubFeatureRequest(){
+    this.setState({ subFeatureRequest:!this.state.subFeatureRequest })
   }
 
   render() {
     const showNav=(this.props.showNav) ? " showNav" : " collapseNav";
-    const showSubNav=(this.state.subNav) ? " showSubNav" : " collapseSubNav";
+    const showSubFeatureRequest=(this.state.subFeatureRequest) ? " showSubFeatureRequest" : " collapseSubFeatureRequest";
+    
+    const dashboard_unavail=(this.props.dashboard_avail) ? "" : " dashboard_unavail";
+    const scripter_unavail=(this.props.scripter_avail) ? "" : " scripter_unavail";
+    const sysmon_unavail=(this.props.sysmon_avail) ? "" : " sysmon_unavail";
+    const projmon_unavail=(this.props.projmon_avail) ? "" : " projmon_unavail";
+    const tfpoints_unavail=(this.props.tfpoints_avail) ? "" : " tfpoints_unavail";
+    const featureRequest_unavail=(this.props.featureRequest_avail) ? "" : " featureRequest_unavail";
+    
     return (
       <div id="sidenav">
         <nav>
@@ -29,64 +37,64 @@ class Sidenav extends Component {
                 <span className={showNav}><FontAwesomeIcon icon={faAngleDoubleRight} size="1x"/></span>
               </Link>
             </div>
-            <li>
+            <li className={dashboard_unavail}>
               <Link to="/">
                 <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
                 <span className={"navText"+showNav}>Dashboard</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
-            <li>
+            <li className={scripter_unavail}>
               <Link to="/scripter">
                 <span className="navIcon"><FontAwesomeIcon icon={faPaperPlane} size="sm"/></span>
                 <span className={"navText"+showNav}>Scripter</span>
                 <span className={"navIcon-right"+showNav}></span>           
               </Link>
             </li>
-            <li>
+            <li className={sysmon_unavail}>
               <Link to="/sysmon">
                 <span className="navIcon"><FontAwesomeIcon icon={faSolarPanel} size="sm"/></span>
                 <span className={"navText"+showNav}>Systems Monitor</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>  
             </li>
-            <li>
+            <li className={projmon_unavail}>
               <Link to="/projmon">
                 <span className="navIcon"><FontAwesomeIcon icon={faShapes} size="sm"/></span>
                 <span className={"navText"+showNav}>Project Monitor</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
-            <li>
-              <Link to="/24Points">
+            <li className={tfpoints_unavail}>
+              <Link to="/tfpoints">
                 <span className="navIcon"><FontAwesomeIcon icon={faCalculator} size="sm"/></span>
                 <span className={"navText"+showNav}>24 Points Solver</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
             
-            <li>
-              <Link to="#" onClick={this.toggleSubNav} className={showSubNav}>
-                <span className={"navIcon subNavToggleButton"+showSubNav}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
-                <span className={"navText subNavToggleButton"+showNav}>Feature Request</span>
+            <li className={featureRequest_unavail}>
+              <Link to="#" onClick={this.toggleSubFeatureRequest} className={showSubFeatureRequest}>
+                <span className={"navIcon subFeatureRequestToggleButton"+showSubFeatureRequest}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
+                <span className={"navText subFeatureRequestToggleButton"+showNav}>Feature Request</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
-            <li className={"subNav"+showSubNav}>
+            <li className={"subFeatureRequest"+showSubFeatureRequest+featureRequest_unavail}>
               <span className={"navIcon"+showNav}></span>
               <Link to="/featureRequest">
                 <span className={"navText"+showNav}>Request Status</span>
                 <span className="navIcon-right"><FontAwesomeIcon icon={faTachometerAlt} size="sm"/></span>
               </Link>
             </li>
-            <li className={"subNav"+showSubNav}>
+            <li className={"subFeatureRequest"+showSubFeatureRequest+featureRequest_unavail}>
               <span className={"navIcon"+showNav}></span>
               <Link to="#">
                 <span className={"navText"+showNav}>Propose Enhancement</span>
                 <span className="navIcon-right"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
               </Link>
             </li>
-            <li className={"subNav"+showSubNav}>
+            <li className={"subFeatureRequest"+showSubFeatureRequest+featureRequest_unavail}>
               <span className={"navIcon"+showNav}></span>
               <Link to="#">
                 <span className={"navText"+showNav}>Report Bug!</span>

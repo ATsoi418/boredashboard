@@ -214,16 +214,16 @@ header {
         ul {
             
             .navToggleButton {
-                width: auto;
+                margin-right: 5px;
                 text-align: right;
-    
+
                 a {
                     display: inline-flex;
+                    padding: 2px;
                     line-height: normal;
                     color: $link_color;
     
                     span {
-                        width: inherit;
                         @include transition(.2s ease-in-out); 
             
                         &.showNav {
@@ -253,7 +253,7 @@ header {
                     padding: 1px 5px;
                     vertical-align: middle;
                     
-                    // &.subNavToggleButton {
+                    // &.subFeatureRequestToggleButton {
                     //     font-style: italic;
                     // }
                 }
@@ -278,7 +278,7 @@ header {
                         background-color: $link_shadow;
                     }
 
-                    &.showSubNav {
+                    &.showSubFeatureRequest {
                         background-color: $link_shadow;
                     }
                 }
@@ -287,22 +287,46 @@ header {
                     display: none;
                 }
                 
-                &.collapseSubNav {
+                &.collapseSubFeatureRequest {
                     display: none;
                 }
 
-                .subNavToggleButton {
+                .subFeatureRequestToggleButton {
                     border: none;
                     background: none;
                     color: $link_color;
     
                     @include transition(.2s ease-in-out);
     
-                    &.showSubNav {
+                    &.showSubFeatureRequest {
                         transform: rotate(90deg);
                     }
                 }
                 
+            }
+
+            .dashboard_unavail {
+                display: none;
+            }
+
+            .scripter_unavail {
+                display: none;
+            }
+
+            .sysmon_unavail {
+                display: none;
+            }
+
+            .projmon_unavail {
+                display: none;
+            }
+
+            .tfpoints_unavail {
+                display: none;
+            }
+
+            .featureRequest_unavail {
+                display: none;
             }
         }
     }
