@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight,faNewspaper,faPaperPlane,faSolarPanel,faShapes,faLightbulb,faChevronRight,faCalculator,faDice,faPuzzlePiece,faToiletPaperSlash,faConciergeBell } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight,faNewspaper,faPaperPlane,faSolarPanel,faShapes,faCalculator,faChevronRight,faTachometerAlt,faLightbulb,faBug } from '@fortawesome/free-solid-svg-icons';
 
 class Sidenav extends Component {
 
@@ -58,38 +58,39 @@ class Sidenav extends Component {
               </Link>
             </li>
             <li>
-              <Link to="#" onClick={this.toggleSubNav}>
-                <span className={"navIcon subNavToggleButton"+showSubNav}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
-                <span className={"navText"+showNav}>Solvers</span>
+              <Link to="/24Points">
+                <span className="navIcon"><FontAwesomeIcon icon={faCalculator} size="sm"/></span>
+                <span className={"navText"+showNav}>24 Points Solver</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
-            <li className={"subNav"+showSubNav}>
-              <span className={"navIcon"+showNav}></span>
-              <Link to="#">
-                <span className={"navText"+showNav}>Calculator</span>
-                <span className="navIcon-right"><FontAwesomeIcon icon={faCalculator} size="sm"/></span>
-              </Link>
-            </li>
-            <li className={"subNav"+showSubNav}>
-              <span className={"navIcon"+showNav}></span>
-              <Link to="#">
-                <span className={"navText"+showNav}>Texas Hold'em</span>
-                <span className="navIcon-right"><FontAwesomeIcon icon={faDice} size="sm"/></span>
-              </Link>
-            </li>
-            <li className={"subNav"+showSubNav}>
-              <span className={"navIcon"+showNav}></span>
-              <Link to="#">
-                <span className={"navText"+showNav}>24 Points</span>
-                <span className="navIcon-right"><FontAwesomeIcon icon={faPuzzlePiece} size="sm"/></span>
-              </Link>
-            </li>
+            
             <li>
-              <Link to="/featrequest">
-                <span className="navIcon"><FontAwesomeIcon icon={faConciergeBell} size="sm"/></span>
-                <span className={"navText"+showNav}>Feature Request</span>
+              <Link to="#" onClick={this.toggleSubNav} className={showSubNav}>
+                <span className={"navIcon subNavToggleButton"+showSubNav}><FontAwesomeIcon icon={faChevronRight} size="sm"/></span>
+                <span className={"navText subNavToggleButton"+showNav}>Feature Request</span>
                 <span className={"navIcon-right"+showNav}></span>
+              </Link>
+            </li>
+            <li className={"subNav"+showSubNav}>
+              <span className={"navIcon"+showNav}></span>
+              <Link to="/featureRequest">
+                <span className={"navText"+showNav}>Request Status</span>
+                <span className="navIcon-right"><FontAwesomeIcon icon={faTachometerAlt} size="sm"/></span>
+              </Link>
+            </li>
+            <li className={"subNav"+showSubNav}>
+              <span className={"navIcon"+showNav}></span>
+              <Link to="#">
+                <span className={"navText"+showNav}>Make Some Suggestions</span>
+                <span className="navIcon-right"><FontAwesomeIcon icon={faLightbulb} size="sm"/></span>
+              </Link>
+            </li>
+            <li className={"subNav"+showSubNav}>
+              <span className={"navIcon"+showNav}></span>
+              <Link to="#">
+                <span className={"navText"+showNav}>Report Bug!</span>
+                <span className="navIcon-right"><FontAwesomeIcon icon={faBug} size="sm"/></span>
               </Link>
             </li>
           </ul>

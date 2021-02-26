@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
+import { logText } from '../../../Assets/sysLog/log_20210225-085938.txt';
+// var logPath = require('path');
+// var logExtension = '.txt';
 
+// var logFiles = files.filter(funtion(file) {
+//     return logPath.extname(file).toLowerCase() === logExtension;
+// });
 
 class LogReader extends Component {
-    constructor(props) {
-        super(props);
-    }
+  
 
-    showFile = async (e) => {
-        e.preventDefault()
-        const reader = new FileReader()
-        reader.onload = async (e) => { 
-            const text = (e.target.result)
-            console.log(text)
-            alert(text)
-        };
-        reader.readAsText(e.target.files[0])
-    }
-
-    render = () => {
-        return (
-            <div>
-                <input type="sysLog" onChange={(e) => this.showFile(e)} />
-            </div>
-        )
-    }
+  render () {
+    return (
+      <div>
+        <p>{logText}</p>
+      </div>
+    )
+  }
 }
 
 export default LogReader;

@@ -208,12 +208,9 @@ header {
     @include transition(.2s ease-in-out);
 
     nav {
-        // position: absolute;
-        // width: inherit;
         margin: 0px 20px;
         padding: 30px 0px;
-        border-radius: 10px;
-        // background-color: rosybrown;
+        // border-radius: 10px;
 
         ul {
             
@@ -223,7 +220,6 @@ header {
     
                 a {
                     display: inline-flex;
-                    width: inherit;
                     line-height: normal;
                     color: $link_color;
     
@@ -234,10 +230,6 @@ header {
                         &.showNav {
                             transform: rotate(180deg);
                         }
-                
-                        // &:hover {
-                        //     background-color: none;
-                        // }
                     }
                 }
             }
@@ -248,7 +240,8 @@ header {
                 .navIcon {
                     display:inline-block;
                     width: 25px;
-                    padding: 0 5px;
+                    padding: 1px 5px;
+                    vertical-align: middle;
 
                     svg {
                         width: 100%;
@@ -258,13 +251,18 @@ header {
                 .navText {
                     display:inline-block;
                     width: 150px;
-                    padding: 0px 5px;
+                    padding: 1px 5px;
+                    vertical-align: middle;
+                    // &.subNavToggleButton {
+                    //     font-style: italic;
+                    // }
                 }
 
                 .navIcon-right {
                     display: inline-block;
                     width: 25px;
-                    padding: 0px 5px;
+                    vertical-align: middle;
+                    padding: 1px 5px;
 
                     svg {
                         width: 100%;
@@ -273,10 +271,14 @@ header {
 
                 a {
                     color: $link_color;
-                    padding: 5px;
+                    display: inline-block;
                     border-radius: 5px;
     
                     &:hover {
+                        background-color: $link_shadow;
+                    }
+
+                    &.showSubNav {
                         background-color: $link_shadow;
                     }
                 }

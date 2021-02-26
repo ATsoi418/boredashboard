@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import LogReader from './logReader.js';
 
 class SysMon extends Component {
   render() {
@@ -7,10 +8,7 @@ class SysMon extends Component {
         <h1>
             Systems Monitor
         </h1>
-        <p>
-            Systems logs go here...
-        </p>
-
+        {/* <LogReader /> */}
       </div>
     );
   }
