@@ -175,7 +175,7 @@ header {
     }
 
     &.collapseNav {
-        grid-template-columns: 45px 1fr;
+        grid-template-columns: 70px 1fr;
     }
 }
 
@@ -244,7 +244,6 @@ header {
 
             li {
                 margin: 10px 0px;
-                border-radius: 5px;
 
                 .navIcon {
                     display:inline-block;
@@ -264,7 +263,7 @@ header {
 
                 .navIcon-right {
                     display: inline-block;
-                    width: 30px;
+                    width: 25px;
                     padding: 0px 5px;
 
                     svg {
@@ -274,6 +273,8 @@ header {
 
                 a {
                     color: $link_color;
+                    padding: 5px;
+                    border-radius: 5px;
     
                     &:hover {
                         background-color: $link_shadow;
