@@ -9,7 +9,7 @@ import DateClock from './dateClock';
 class Header extends Component {
 
   render() {
-    const onOverlay=(this.props.overlay)?"onOverlay":"";
+    const onOverlay=(this.props.overlay) ? "onOverlay" : "";
     return (
       <header>
         <div id="header-logo" className="logo">

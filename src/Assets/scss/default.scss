@@ -175,9 +175,8 @@ header {
     }
 
     &.collapseNav {
-        grid-template-columns: 50px 1fr;
+        grid-template-columns: 45px 1fr;
     }
-
 }
 
 .overlay {
@@ -200,95 +199,108 @@ header {
 
 #sidenav {
     grid-area: sidenav;
-    width: 250px;
+    width: auto;
     z-index: 98;
     min-height: 90vh;
     font-size: 16px;
     overflow-x: hidden;
     overflow-y: scroll;
-    @include transition(.3s ease-in-out);
+    @include transition(.2s ease-in-out);
 
     nav {
-        position: absolute;
-        width: inherit;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        border-radius: 0px 10px 10px 0px;
+        // position: absolute;
+        // width: inherit;
+        margin: 0px 20px;
+        padding: 30px 0px;
+        border-radius: 10px;
+        // background-color: rosybrown;
 
         ul {
-
-            a {
-                line-height: normal;
-                color: $link_color;
-                
-                li {
-                    padding-left: 15px;
-                    margin-left: 15px;
-                    margin-top: 5px;
-                    margin-bottom: 5px;
-                    padding-top: 5px;
-                    padding-bottom: 5px;
-                    border-radius: 5px;
-
-                    &:hover {
-                        background-color: $link_shadow;
-                    }
-                    
-                    &.navToggleButton {
-                        margin-bottom: 50px;
-                    }
-
-                    .navToggleButton { 
-                        position: absolute;
-                        color: $link_color;
-
+            
+            .navToggleButton {
+                width: auto;
+                text-align: right;
+    
+                a {
+                    display: inline-flex;
+                    width: inherit;
+                    line-height: normal;
+                    color: $link_color;
+    
+                    span {
+                        width: inherit;
                         @include transition(.2s ease-in-out); 
-
+            
                         &.showNav {
                             transform: rotate(180deg);
                         }
+                
+                        // &:hover {
+                        //     background-color: none;
+                        // }
                     }
+                }
+            }
 
-                    .subNavToggleButton {
-                        position: absolute;
-                        right: 0px;
-                        margin-right: 20px;
-                        border: none;
-                        background: none;
-                        color: $link_color;
+            li {
+                margin: 10px 0px;
+                border-radius: 5px;
 
-                        @include transition(.2s ease-in-out);
+                .navIcon {
+                    display:inline-block;
+                    width: 25px;
+                    padding: 0 5px;
 
-                        &.showSubNav {
-                            transform: rotate(90deg);
-                        }
+                    svg {
+                        width: 100%;
                     }
                 }
 
-                .navIcon {
-                    width: 30px;
+                .navText {
+                    display:inline-block;
+                    width: 150px;
+                    padding: 0px 5px;
+                }
+
+                .navIcon-right {
                     display: inline-block;
+                    width: 30px;
+                    padding: 0px 5px;
 
                     svg {
-                        margin-right: 5px;
+                        width: 100%;
+                    }
+                }
+
+                a {
+                    color: $link_color;
+    
+                    &:hover {
+                        background-color: $link_shadow;
+                    }
+                }
+
+                .collapseNav {
+                    display: none;
+                }
+                
+                &.collapseSubNav {
+                    display: none;
+                }
+
+                .subNavToggleButton {
+                    border: none;
+                    background: none;
+                    color: $link_color;
+    
+                    @include transition(.2s ease-in-out);
+    
+                    &.showSubNav {
+                        transform: rotate(90deg);
                     }
                 }
                 
             }
-
-            .collapse {
-                margin-top: 20px;
-
-                ul li {
-                    padding-left: 25px;
-                    margin-bottom: 10px;
-                }
-
-                &.showSubNav {
-                    display: unset;
-                }
-            }
-
         }
     }
 }

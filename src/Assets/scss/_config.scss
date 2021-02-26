@@ -94,15 +94,14 @@ h3 {
 }
 
 a {
-    @include transition(.4s ease-in-out);
+    // @include transition(.4s ease-in-out);
     cursor: pointer;
     text-decoration: none !important;
 
     &:hover {
         color: $sec_color;
         text-decoration: none !important;
-        @include transition(.4s ease-in-out);
-        
+        // @include transition(.4s ease-in-out);
     }
 }
 

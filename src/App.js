@@ -32,20 +32,20 @@ class App extends Component {
   }
 
   toggleOverlay(){
-    this.setState({overlay:!this.state.overlay})
+    this.setState({ overlay:!this.state.overlay })
   }
 
   closeOverlay(){
-    this.setState({overlay:false})
+    this.setState({ overlay:false })
   }
 
   toggleNav(){
-    this.setState({nav:!this.state.nav})
+    this.setState({ nav:!this.state.nav })
   }
 
   render() {
-    const onOverlay=(this.state.overlay)?' onOverlay':'';
-    const navState=(this.state.nav)?' showNav':' collapseNav';
+    const onOverlay=(this.state.overlay) ? ' onOverlay' : '';
+    const navState=(this.state.nav) ? ' showNav' : ' collapseNav';
     return (
       <Router>
           <div className="wrapper">
