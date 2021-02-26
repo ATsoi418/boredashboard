@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleRight,faNewspaper,faPaperPlane,faSolarPanel,faShapes,faCalculator,faChevronRight,faTachometerAlt,faLightbulb,faBug } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight,faNewspaper,faTools,faPaperPlane,faSolarPanel,faShapes,faCalculator,faChevronRight,faTachometerAlt,faLightbulb,faBug } from '@fortawesome/free-solid-svg-icons';
 
 class Sidenav extends Component {
 
@@ -22,6 +22,7 @@ class Sidenav extends Component {
     const showSubFeatureRequest=(this.state.subFeatureRequest) ? " showSubFeatureRequest" : " collapseSubFeatureRequest";
     
     const dashboard_unavail=(this.props.dashboard_avail) ? "" : " dashboard_unavail";
+    const utils_unavail=(this.props.utils_avail) ? "" : " utils_unavail";
     const scripter_unavail=(this.props.scripter_avail) ? "" : " scripter_unavail";
     const sysmon_unavail=(this.props.sysmon_avail) ? "" : " sysmon_unavail";
     const projmon_unavail=(this.props.projmon_avail) ? "" : " projmon_unavail";
@@ -41,6 +42,13 @@ class Sidenav extends Component {
               <Link to="/">
                 <span className="navIcon"><FontAwesomeIcon icon={faNewspaper} size="sm"/></span>
                 <span className={"navText"+showNav}>Dashboard</span>
+                <span className={"navIcon-right"+showNav}></span>
+              </Link>
+            </li>
+            <li className={utils_unavail}>
+              <Link to="/utils">
+                <span className="navIcon"><FontAwesomeIcon icon={faTools} size="sm"/></span>
+                <span className={"navText"+showNav}>Utilities</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
