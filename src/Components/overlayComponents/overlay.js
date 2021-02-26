@@ -4,12 +4,13 @@ import FlipClock from './flipClock.js';
 class Overlay extends Component {
 
   render() {
+    const userName=(this.props.userName);
     const showOverlay=(this.props.overlay)?" show":"";
     return (
       <div className={"overlay collapse"+showOverlay}>
         <div className="overlay-items">
           <div className="overlay-item">
-            <h1>Hello, Ash</h1>
+            <h1>Hello, {userName}</h1>
           </div>
           <div id="flipClock" className="overlay-item">
             <FlipClock />

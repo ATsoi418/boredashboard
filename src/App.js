@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom';
 import './Assets/css/default.min.css'
-// import Cookies from 'universal-cookie';
+import Cookies from 'universal-cookie';
 
 // Components
 import Header from './Components/headerComponents/header';
@@ -19,7 +19,8 @@ import MarkdownEditor from './Components/pages/scripterComponents/scripter';
 import Config from './Components/pages/config';
 import NotFound from './Components/pages/notfound';
 
-// const cookies = new Cookies();
+const cookies = new Cookies();
+cookies.set('name', 'Ash', { path: '/' });
 
 class App extends Component {
 
@@ -27,7 +28,8 @@ class App extends Component {
     super(props);
     this.state = {
       overlay:true,
-      nav:true
+      nav:true,
+      userName:cookies.get('name')
     };
     this.toggleOverlay=this.toggleOverlay.bind(this);
     this.closeOverlay=this.closeOverlay.bind(this);
@@ -49,20 +51,21 @@ class App extends Component {
   render() {
     const onOverlay=(this.state.overlay) ? ' onOverlay' : '';
     const navState=(this.state.nav) ? ' showNav' : ' collapseNav';
+    const userName=(this.state.userName);
     return (
       <Router>
           <div className="wrapper">
             <Header overlay={this.state.overlay} logoOnClick={this.toggleOverlay} configOnClick={this.closeOverlay}/>
-            <Overlay overlay={this.state.overlay} />
+            <Overlay overlay={this.state.overlay} userName={userName}/>
             <div className={"content"+onOverlay+navState}>
               <Sidenav showNav={this.state.nav} navToggleOnClick={this.toggleNav}/>
               <Switch>
-              <Route exact path='/' component={Homepage} />
-              <Route exact path='/sysmon' component={SysMon} />
-              <Route exact path='/projmon' component={ProjMon} />
-              <Route exact path='/scripter' component={MarkdownEditor} />
-              <Route exact path='/config' component={Config}/>
-              <Route component={NotFound} />
+                <Route exact path='/' component={Homepage} />
+                <Route exact path='/sysmon' component={SysMon} />
+                <Route exact path='/projmon' component={ProjMon} />
+                <Route exact path='/scripter' component={MarkdownEditor} />
+                <Route exact path='/config' component={Config}/>
+                <Route component={NotFound} />
               </Switch>
             </div>
           </div>
