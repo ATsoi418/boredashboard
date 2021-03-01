@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Calendar from './calendar.js';
+import Calendar from './calendar';
+import Todo from './todo';
 
 class Home extends Component {
   render() {
@@ -10,6 +11,9 @@ class Home extends Component {
           </h1>
           <div id="calendar">
             <Calendar />
+          </div>
+          <div id="todo">
+            <Todo />
           </div>
       </div>
     );

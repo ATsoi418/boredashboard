@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import LogReader from './logReader.js';
+// import LogReader from './logReader';
 
 class SysMon extends Component {
   render() {
