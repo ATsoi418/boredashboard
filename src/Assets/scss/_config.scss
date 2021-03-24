@@ -1,7 +1,7 @@
 // Vars
 
 $black: #010000;
-$lightGrey: #e6e6e6;
+$lightGrey: rgb(230, 230, 230);
 $darkGrey: #333;
 $navyBlue: rgb(40,44,52);
 $red: #ff1755;
@@ -61,7 +61,6 @@ body {
     // background: linear-gradient(to left, $navyBlue 10%, 75%, #0d5d74 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     color: $text_color;
-    font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
 

@@ -30,6 +30,7 @@ header {
     #header-logo {
         grid-area: header-logo;
         font-size: 18px;
+        font-weight: bold;
         margin-left: 25px;
 
         a {
@@ -62,7 +63,7 @@ header {
                         width: 5px;
                         height: 5px;
                         margin: 3px;
-                        background-color: $third_color;
+                        background-color: $third_color_a5;
                         border-radius: 100%;
                         transition: all .3s ease-in;
                     }
@@ -706,12 +707,12 @@ header {
     }
 
     .calculator .operator-keys {
-        background: linear-gradient(to bottom, rgba(252,156,23,1) 0%, rgba(247,126,27,1) 100%);
+        background: linear-gradient(to bottom, rgb(248, 196, 122) 0%, rgb(248, 147, 64) 100%);
     }
 
 }
 
-.MarkdownEditor{
+.MarkdownEditor {
     width: 100%;
     height: auto;
 
@@ -738,7 +739,7 @@ header {
         border-radius: 10px;
         margin: 0 5 10 0;
         padding: 10px;
-        color: white;
+        color: $sec_color;
 
         resize: vertical;
 

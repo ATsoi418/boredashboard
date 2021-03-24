@@ -29,9 +29,9 @@ class Header extends Component {
               <FontAwesomeIcon icon={faSearch} className="moveLeft-hover"/>
             </li>
             <li>|</li>
-            <li>
+            {/* <li>
               <input type="checkbox" className="ViewToggle"/>
-            </li>
+            </li> */}
             <li>
               <Link to="/config" onClick={this.props.configOnClick}><FontAwesomeIcon icon={faCog} className="fa-spin-hover"/></Link>
             </li>
