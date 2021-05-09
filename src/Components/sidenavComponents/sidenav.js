@@ -26,7 +26,7 @@ class Sidenav extends Component {
     const scripter_unavail=(this.props.scripter_avail) ? "" : " scripter_unavail";
     const sysmon_unavail=(this.props.sysmon_avail) ? "" : " sysmon_unavail";
     const projmon_unavail=(this.props.projmon_avail) ? "" : " projmon_unavail";
-    const tfpoints_unavail=(this.props.tfpoints_avail) ? "" : " tfpoints_unavail";
+    const games_unavail=(this.props.games_avail) ? "" : " games_unavail";
     const featureRequest_unavail=(this.props.featureRequest_avail) ? "" : " featureRequest_unavail";
     
     return (
@@ -68,15 +68,15 @@ class Sidenav extends Component {
             </li>
             <li className={projmon_unavail}>
               <Link to="/projmon">
-                <span className="navIcon"><FontAwesomeIcon icon={faShapes} size="sm"/></span>
+                <span className="navIcon"><FontAwesomeIcon icon={faSolarPanel} size="sm"/></span>
                 <span className={"navText"+showNav}>Project Monitor</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>
-            <li className={tfpoints_unavail}>
-              <Link to="/tfpoints">
-                <span className="navIcon"><FontAwesomeIcon icon={faCalculator} size="sm"/></span>
-                <span className={"navText"+showNav}>24 Points Solver</span>
+            <li className={games_unavail}>
+              <Link to="/games">
+                <span className="navIcon"><FontAwesomeIcon icon={faShapes} size="sm"/></span>
+                <span className={"navText"+showNav}>Games</span>
                 <span className={"navIcon-right"+showNav}></span>
               </Link>
             </li>

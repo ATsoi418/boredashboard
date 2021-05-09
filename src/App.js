@@ -18,7 +18,8 @@ import Utils from './Components/pages/utilsComponents/utils';
 import MarkdownEditor from './Components/pages/scripterComponents/scripter';
 import SysMon from './Components/pages/sysmonComponents/sysMon';
 import ProjMon from './Components/pages/projmonComponents/projMon';
-import TfPoints from './Components/pages/tfpointsComponents/tfpoints';
+import Games from './Components/pages/gamesComponents/games';
+import TfPoints from './Components/pages/gamesComponents/tfPointsComponents/tfpoints';
 import NotFound from './Components/pages/notfound';
 
 // const cookies = new Cookies();
@@ -37,7 +38,7 @@ class App extends Component {
       scripter_avail:true,
       sysmon_avail:true,
       projmon_avail:true,
-      tfpoints_avail:true,
+      games_avail:true,
       featureRequest_avail:true
     };
     this.toggleOverlay=this.toggleOverlay.bind(this);
@@ -66,7 +67,7 @@ class App extends Component {
     const scripter_avail=(this.state.scripter_avail);
     const sysmon_avail=(this.state.sysmon_avail);
     const projmon_avail=(this.state.projmon_avail);
-    const tfpoints_avail=(this.state.tfpoints_avail);
+    const games_avail=(this.state.games_avail);
     const featureRequest_avail=(this.state.featureRequest_avail);
     return (
       <Router>
@@ -81,7 +82,7 @@ class App extends Component {
                 scripter_avail={scripter_avail}
                 sysmon_avail={sysmon_avail}
                 projmon_avail={projmon_avail}
-                tfpoints_avail={tfpoints_avail}
+                games_avail={games_avail}
                 featureRequest_avail={featureRequest_avail}
                 />
               <Switch>
@@ -91,7 +92,9 @@ class App extends Component {
                 <Route exact path='/sysmon' component={SysMon} />
                 <Route exact path='/projmon' component={ProjMon} />
                 <Route exact path='/scripter' component={MarkdownEditor} />
-                <Route exact path='/tfpoints' component={TfPoints} />
+                <Route exact path='/games' component={Games} />
+                <Route exact path='/games/tfPoints' component={TfPoints} />
+                
                 <Route component={NotFound} />
               </Switch>
             </div>
