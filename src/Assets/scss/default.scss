@@ -864,7 +864,11 @@ header {
         justify-content: center;
 
         button {
-
+          height: 60px;
+          width: 200px;
+          // margin: 0 10px;
+          position: relative;
+          text-align: left;
         }
   
       }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 
@@ -13,7 +14,7 @@ class TfPoints extends Component {
     };
     this.startGame=this.startGame.bind(this);
     this.exitGame=this.exitGame.bind(this);
-    this.toggleAFK=this.toggleAFK.bind(this);
+    this.pauseGame=this.pauseGame.bind(this);
   }
 
   startGame(){
@@ -24,7 +25,7 @@ class TfPoints extends Component {
     this.setState({ inGame:false })
   }
 
-  toggleAFK(){
+  pauseGame(){
     this.setState({ pauseGame:!this.state.pauseGame })
   }
 
@@ -60,27 +61,27 @@ class TfPoints extends Component {
             </div>
           </div>
           <div className="rhs">
-            <div className={"timer"+inGame}>
+            <div className={"timer"+inGame+pauseGame}>
               00:00
             </div>
             <div className={"gameControl"+inGame}>
               <button onClick={this.exitGame} variant="info" className="card">
                 Exit Game
               </button>
-              <ToggleButtonGroup toggle className="card">
+              {/* <ToggleButtonGroup toggle className="card">
                 <ToggleButton
                   type="checkbox"
                   variant="info"
-                  checked={checked}
+                  checked={this.pauseGame=true}
                   value="1"
-                  onChange={(e) => toggleAFK(e.currentTarget.checked)}
+                  onChange={this.pauseGame}
                 >
                   AFK
                 </ToggleButton>
-              </ToggleButtonGroup >
-              {/* <button onClick={this.toggleAFK} className="card">
+              </ToggleButtonGroup > */}
+              <button onClick={this.pauseGame} className="card">
                 Toggle AFK
-              </button> */}
+              </button>
             </div>
             <div className={"inputs"+inGame}>
               <button onClick={this.startGame} className="card">
